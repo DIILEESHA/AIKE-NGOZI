@@ -2,7 +2,8 @@ import "./mi.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import start from "../../assets/star.png";
-import susa from "../../assets/couple1.png";
+import susa from "../../assets/th.jpg";
+import susat from "../../assets/tw.jpg";
 
 const container = {
   hidden: { opacity: 0 },
@@ -346,7 +347,7 @@ const Middle = () => {
             >
               <div className="depths">
                 <motion.img 
-                  src={susa} 
+                  src={susat} 
                   alt="Love Eternal" 
                   className="inside_img"
                   animate={{

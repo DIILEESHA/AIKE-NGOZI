@@ -62,9 +62,10 @@
 .count {
   display: flex;
   flex-direction: column;
+  padding: 30px;
   /* align-items: center; */
   justify-content: center;
-  background-color: #1a1a1add; /* Dark elegant base */
+  background-color: #1a1a1a; /* Dark elegant base */
 }
 
 /* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */

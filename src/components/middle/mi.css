@@ -184,7 +184,7 @@
 .inside_img {
   height: 50vh;
   width: 100%;
-  margin-bottom: 10px;
+  object-fit: cover;
   position: relative;
   z-index: 1;
   background-size: cover;
