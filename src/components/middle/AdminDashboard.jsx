@@ -33,7 +33,7 @@ const AdminDashboard = () => {
 
   // Dummy password
   const handleLogin = () => {
-    if (password === "admin123") {
+    if (password === "an26!") {
       setAuthenticated(true);
       fetchRsvps();
     } else {
