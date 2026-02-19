@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'dancing';
+  src: url('../public/fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'great';
+  src: url('../public/fonts/GreatVibes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'raleway';
+  src: url('../public/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'cinzel';
+  src: url('../public/fonts/Cinzel-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.footer{
+  font-family: "cinzel";
+  background-color: rgba(30, 6, 61, 0.929);
+  padding: 10px;
+  font-size: 13px;
+color: #fff;
+text-align: center;  
+}
+
+
+
+/* ------------------ FOOTER ------------------ */
+
+.footer_container {
+  background-color: #1a1a1a; /* Dark elegant base */
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  position: relative;
+  z-index: 1;
+}
+
+.footer_gradient_text {
+  font-size: 24px;
+  font-weight: bold;
+
+  /* Gold gradient for luxury wedding vibe */
+  background: linear-gradient(
+    135deg,
+    #b83c0b,
+    #ffd700,
+    #fff8dc,
+    #ffd700,
+    #b8860b
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+               0 0 8px rgba(255, 215, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.footer_text {
+  font-family: "Dancing Script", cursive;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer_small {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Social links (optional) */
+.footer_social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer_social a {
+  color: #ffd700;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.footer_social a:hover {
+  transform: scale(1.2);
+  color: #fff8dc;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+/* Tablet 768px */
+@media (max-width: 768px) {
+  .footer_gradient_text {
+    font-size: 20px;
+  }
+  .footer_text {
+    font-size: 16px;
+  }
+}
+
+/* Mobile 480px */
+@media (max-width: 480px) {
+  .footer_gradient_text {
+    font-size: 18px;
+  }
+  .footer_text {
+    font-size: 14px;
+  }
+  .footer_small {
+    font-size: 12px;
+  }
+  .footer_social a {
+    font-size: 18px;
+    gap: 15px;
+  }
+}

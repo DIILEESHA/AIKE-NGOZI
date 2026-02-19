@@ -1,0 +1,132 @@
+.count_grid {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  text-align: center;
+}
+
+.count_subs {
+  text-align: center;
+}
+
+.count_day,
+.count_value,
+.count_title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3rem;
+
+  /* Step 2: Create the Gold Gradient */
+  background: linear-gradient(
+    to bottom,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5e9 75%,
+    #aa771c 100%
+  );
+
+  /* Step 3: Mask the background so it only shows through the letters */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Step 4: Make the actual text transparent so the background shows */
+  -webkit-text-fill-color: transparent;
+
+  /* Step 5: Add a very subtle shadow to give it "lift" off the page */
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+  font-family: "cinzel";
+
+  font-size: 60px;
+}
+
+.pagal {
+  width: 500px !important;
+}
+.count_title {
+  margin: 20px auto;
+  width: 30%;
+  line-height: 150%;
+  text-align: center;
+
+  font-size: 30px;
+}
+.count_value {
+  font-size: 20px;
+  font-weight: 400;
+}
+.line{
+    display: flex;align-items: center;justify-content: center;
+}
+.count {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  background-color: #1a1a1add; /* Dark elegant base */
+}
+
+/* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
+
+/* Large Tablets / Small Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  .count_day,
+  .count_value,
+  .count_title {
+    font-size: calc(60px * 0.85); /* scale down 15% */
+  }
+  .count_title {
+    width: 40%;
+  }
+  .count_grid {
+    gap: 20px;
+  }
+  .pagal {
+    width: 400px !important;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .count_day {
+    font-size: 45px;
+  }
+  .count_value {
+    font-size: 18px;
+  }
+  .count_title {
+    font-size: 24px;
+    width: 50%;
+  }
+  .count_grid {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .pagal {
+    width: 350px !important;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .count_day {
+    font-size: 36px;
+  }
+  .count_value {
+    font-size: 16px;
+  }
+  .count_title {
+    font-size: 18px;
+    width: 70%;
+  }
+  .count_grid {
+    gap: 10px;
+    display: grid;
+    padding: 0px 0 20px 0;
+    grid-template-columns: 1fr 1fr;
+  }
+  .pagal {
+    width: 300px !important;
+  }
+}
