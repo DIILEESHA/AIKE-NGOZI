@@ -242,8 +242,10 @@ const Middle = () => {
                   {/* <motion.h2 className="year" variants={dateReveal}> */}
                     {/* 25 Years */}
                   {/* </motion.h2> */}
+<div className="kol">
 
                   <img src={tura} alt="" className="tf_img" />
+</div>
                   <motion.h2 
                     className="yearma" 
                     variants={locationGlow}

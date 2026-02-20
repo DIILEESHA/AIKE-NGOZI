@@ -30,16 +30,17 @@
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-
-.gom{
-position: absolute;
-inset: 0;
-display: flex;align-items: center;justify-content: center;
-padding: 20px;
+.gom {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.jom{
-    width: 100%;
+.jom {
+  width: 100%;
   max-width: 910px;
   margin: 0 auto;
   height: 320px;
@@ -49,9 +50,9 @@ padding: 20px;
   position: relative;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
-.sum{
-    width: 100%;
-    padding: 20px;
+.sum {
+  width: 100%;
+  padding: 20px;
   max-width: 880px;
   position: absolute;
   margin: 0 auto;
@@ -528,8 +529,8 @@ padding: 20px;
     /* padding: 20px; */
     height: 200px;
     background-color: #1a1a1ace;
-  background-color: #1a2b44;
-margin-bottom: 1px;
+    background-color: #1a2b44;
+    margin-bottom: 1px;
     /* background-image: url("../../assets/blue.JPG"); */
     position: relative;
     background-size: cover;
@@ -547,6 +548,22 @@ margin-bottom: 1px;
   }
   .inside_img {
     height: 40vh;
+  }
+
+  .luxury_card {
+    width: 100%;
+  }
+
+  .kol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tf_img {
+    width: 350px;
+    margin-top: -70px;
+    margin-bottom: -50px;
   }
   .rsvp_formy {
     gap: 10px;
@@ -666,17 +683,16 @@ margin-bottom: 1px;
     height: 45vh;
   }
 
-  .rsvp_title{
+  .rsvp_title {
     font-size: 25px;
     line-height: 150%;
   }
-  .rsvp_sm_title{
+  .rsvp_sm_title {
     font-size: 16px;
   }
 
-
-  .rsvp_p{
-    font-size: 12px!important;
+  .rsvp_p {
+    font-size: 12px !important;
   }
 
   .rsvp_label {
