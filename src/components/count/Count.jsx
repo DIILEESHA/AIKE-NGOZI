@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import start from "../../assets/star.png";
 
-const targetDate = new Date("2026-06-24T00:00:00");
+const targetDate = new Date("2026-10-11T00:00:00");
 
 const Count = () => {
   const calculateTimeLeft = () => {

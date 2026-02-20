@@ -1,10 +1,10 @@
 import "./mi.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import start from "../../assets/star.png";
+import start from "../../assets/stars.png";
 import susa from "../../assets/th.jpg";
 import susat from "../../assets/tw.jpg";
-
+import tura from "../../assets/25.png"
 const container = {
   hidden: { opacity: 0 },
   visible: {
@@ -192,7 +192,7 @@ const Middle = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           {/* LEFT SIDE - Wedding Cards */}
-          <motion.div className="middle_sub go">
+          <motion.div className="middle_sub go kami">
             {/* Couple Name Card */}
             <motion.div 
               className="middle_card luxury_card" 
@@ -239,9 +239,11 @@ const Middle = () => {
                     />
                   </motion.div>
 
-                  <motion.h2 className="year" variants={dateReveal}>
-                    25 Years
-                  </motion.h2>
+                  {/* <motion.h2 className="year" variants={dateReveal}> */}
+                    {/* 25 Years */}
+                  {/* </motion.h2> */}
+
+                  <img src={tura} alt="" className="tf_img" />
                   <motion.h2 
                     className="yearma" 
                     variants={locationGlow}
@@ -260,56 +262,11 @@ const Middle = () => {
               </div>
             </motion.div>
 
-            {/* Date & Location Card */}
-            <motion.div 
-              className="middle_card luxury_card" 
-              variants={luxuryCardReveal}
-              whileHover={{ 
-                y: -10, 
-                rotateX: -2,
-                boxShadow: "0 35px 60px rgba(0,0,0,0.25)"
-              }}
-            >
-              <motion.div 
-                className="dosh"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 }}
-              >
-                <div className="depth">
-                  <motion.h2 className="year" variants={dateReveal}>
-                    September 11-13, 2026
-                  </motion.h2>
-
-                  <motion.div className="line" variants={starFloat}>
-                    <motion.img 
-                      src={start} 
-                      alt="Event Star" 
-                      className="star_img"
-                      animate={{ 
-                        rotate: [360, 360],
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{ 
-                        rotate: { duration: 14, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 5, repeat: Infinity }
-                      }}
-                    />
-                  </motion.div>
-
-                  <motion.h2 
-                    className="yearma" 
-                    variants={locationGlow}
-                  >
-                    Charlotte, NC
-                  </motion.h2>
-                </div>
-              </motion.div>
-            </motion.div>
+         
           </motion.div>
 
           {/* RIGHT SIDE - Luxury Images */}
-          <motion.div className="middle_sub">
+          <motion.div className="middle_sub kas">
             <motion.div
               className="img_card luxury_img"
               variants={imageLuxuryReveal}
@@ -360,6 +317,60 @@ const Middle = () => {
                   transition={{ duration: 3.5, repeat: Infinity }}
                 />
               </div>
+            </motion.div>
+          </motion.div>
+
+
+
+
+            <motion.div className="middle_sub go kami">
+         
+
+            {/* Date & Location Card */}
+            <motion.div 
+              className="middle_card luxury_card" 
+              variants={luxuryCardReveal}
+              whileHover={{ 
+                y: -10, 
+                rotateX: -2,
+                boxShadow: "0 35px 60px rgba(0,0,0,0.25)"
+              }}
+            >
+              <motion.div 
+                className="dosh"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="depth">
+                  <motion.h2 className="year" variants={dateReveal}>
+                    September 11-13, 2026
+                  </motion.h2>
+
+                  <motion.div className="line" variants={starFloat}>
+                    <motion.img 
+                      src={start} 
+                      alt="Event Star" 
+                      className="star_img"
+                      animate={{ 
+                        rotate: [360, 360],
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{ 
+                        rotate: { duration: 14, repeat: Infinity, ease: "linear" },
+                        scale: { duration: 5, repeat: Infinity }
+                      }}
+                    />
+                  </motion.div>
+
+                  <motion.h2 
+                    className="yearma" 
+                    variants={locationGlow}
+                  >
+                    Charlotte, NC
+                  </motion.h2>
+                </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>

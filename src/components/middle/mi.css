@@ -31,17 +31,23 @@
   background-color: #1a2b44; /* Ensure this is solid if you want to hide the image */
 }
 .miss {
-  max-width: 1600px;
+  max-width: 1300px;
   margin: 0 auto;
 }
-
+.kami{
+  max-width: 700px;
+  margin: 0 auto;
+}
 .middle_grid {
   padding: 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr ;
   gap: 100px;
 }
-
+.kas{
+  display: flex;
+  gap: 40px;
+}
 .go {
   display: flex;
   align-items: center;
@@ -203,6 +209,15 @@
 
 .star_img {
   width: 100%;
+  height: auto;
+  margin:-150px 0
+}
+
+.tf_img{
+  width: 250px;
+  object-fit: contain;
+  margin-top: -40px;
+  margin-bottom: -20px;
 }
 
 .img_card {
@@ -537,10 +552,11 @@
   }
   .star_img {
     width: 80%;
-    margin: 0 auto;
+
+    margin: -50px auto;
   }
   .inside_img {
-    height: 35vh;
+    height: 45vh;
   }
   .rsvp_sm_title,
   .rsvp_p {
