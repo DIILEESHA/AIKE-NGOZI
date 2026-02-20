@@ -30,7 +30,12 @@
 }
 
 
-
+.ham{
+  background-image: url("../src/assets/ds3.PNG");
+  position: absolute;
+  overflow-x: scroll;
+  width: 100%;
+}
 .footer{
   font-family: "cinzel";
   background-color: rgba(30, 6, 61, 0.929);

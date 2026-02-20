@@ -6,6 +6,8 @@ import countryList from "react-select-country-list";
 import Count from "../count/Count";
 import "react-toastify/dist/ReactToastify.css";
 import gomz from "../../assets/traingle.png";
+import sc from "../../assets/dm4.png"
+
 // Custom Select Styles (UPDATED ONLY REQUIRED PARTS)
 const customSelectStyles = {
   control: (provided, state) => ({
@@ -146,7 +148,12 @@ const Rsvp = () => {
   };
 
   return (
-    <div className="middle costa">
+    <div className=" costa">
+
+
+      <div className="jkobs">
+        {/* <img src={sc} alt="" className="kob_img" /> */}
+      </div>
       {/* <div className="b"> */}
       {/* <div className="gom"> */}
 
@@ -174,7 +181,7 @@ const Rsvp = () => {
                       type="text"
                       name="firstName"
                       value={formData.firstName}
-                      placeholder="Enter Your First Name"
+                      placeholder="First Name"
                       className="rsvp_input"
                       onChange={handleChange}
                       style={{
@@ -200,7 +207,7 @@ const Rsvp = () => {
                       type="text"
                       name="lastName"
                       value={formData.lastName}
-                      placeholder="Enter Your Last Name"
+                      placeholder="Last Name"
                       className="rsvp_input"
                       onChange={handleChange}
                       style={{
@@ -226,7 +233,7 @@ const Rsvp = () => {
                       type="email"
                       name="email"
                       value={formData.email}
-                      placeholder="Enter Your Email Address"
+                      placeholder="Email Address"
                       className="rsvp_input"
                       onChange={handleChange}
                       style={{
@@ -248,13 +255,13 @@ const Rsvp = () => {
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
                     <label className="rsvp_label">
-                      STREET ADDRESS (LINE 1) *
+                      STREET ADDRESS *
                     </label>
                     <input
                       type="text"
                       name="streetAddress"
                       value={formData.streetAddress}
-                      placeholder="Enter Your Street Address"
+                      placeholder="Street Address"
                       className="rsvp_input"
                       onChange={handleChange}
                       style={{
@@ -276,7 +283,7 @@ const Rsvp = () => {
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
                     <label className="rsvp_label">
-                      ADDRESS LINE 2 (APT/SUITE)
+                      ADDRESS LINE 2 
                     </label>
                     <input
                       type="text"
@@ -297,7 +304,7 @@ const Rsvp = () => {
                       type="text"
                       name="city"
                       value={formData.city}
-                      placeholder="Enter Your City"
+                      placeholder="City"
                       className="rsvp_input"
                       onChange={handleChange}
                       style={{
@@ -323,7 +330,7 @@ const Rsvp = () => {
                       type="text"
                       name="state"
                       value={formData.state}
-                      placeholder="Enter Your State or Province"
+                      placeholder="State"
                       className="rsvp_input"
                       onChange={handleChange}
                     />
@@ -338,7 +345,7 @@ const Rsvp = () => {
                       type="text"
                       name="zip"
                       value={formData.zip}
-                      placeholder="Enter Your Postal or Zip Code"
+                      placeholder="Zip"
                       className="rsvp_input"
                       onChange={handleChange}
                     />
@@ -356,7 +363,7 @@ const Rsvp = () => {
                         (option) => option.label === formData.country,
                       )}
                       onChange={handleCountryChange}
-                      placeholder="Select Your Country"
+                      placeholder=" Country"
                       styles={customSelectStyles}
                     />
                     {errors.country && (

@@ -1,8 +1,41 @@
 .middle {
   overflow: hidden;
-
+position: relative;
   background-image: url("../../assets/beige.avif");
   width: 100%;
+}
+
+.jkob {
+  position: absolute;
+  right: 0;
+  top: -150px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* inset: 0; */
+}
+.jkobs {
+  position: absolute;
+  bottom: 0;
+  transform: rotate(360deg);
+  /* left: 0; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* inset: 0; */
+}
+.kob_img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+  /* animation: gentle-breathe 6s ease-in-out infinite; */
+}
+
+@keyframes gentle-breathe {
+  0% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.9; transform: scale(1); }
 }
 .gpo {
   margin-bottom: 30px;
@@ -10,7 +43,7 @@
 .costa {
   padding: 80px 0 0 0;
 }
-.rba{
+.rba {
   font-size: 40px;
 }
 .kuchiys {
@@ -82,6 +115,7 @@
 
 .miss {
   max-width: 1300px;
+  /* position: relative; */
   margin: 0 auto;
 }
 .kami {
@@ -543,10 +577,9 @@
     font-size: 36px;
   }
 
-
-  .rba{
-  font-size: 25px;
-}
+  .rba {
+    font-size: 25px;
+  }
   .year {
     font-size: 26px;
   }
@@ -573,7 +606,7 @@
     margin-bottom: -20px;
   }
 
-  .musra{
+  .musra {
     margin-bottom: -30px;
   }
   .rsvp_formy {

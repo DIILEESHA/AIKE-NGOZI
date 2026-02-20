@@ -7,12 +7,12 @@ import Rsvp from "./components/middle/Rsvp";
 import AdminDashboard from "./components/middle/AdminDashboard"; // Admin Dashboard component
 
 const Home = () => (
-  <>
+  <div className="ham">
     <Header />
     <Middle />
     {/* <Count /> */}
-    <Rsvp/>
-  </>
+    {/* <Rsvp/> */}
+  </div>
 );
 
 const Footer = () => (

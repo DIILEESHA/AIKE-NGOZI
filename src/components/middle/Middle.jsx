@@ -5,6 +5,10 @@ import start from "../../assets/stars.png";
 import susa from "../../assets/th.jpg";
 import susat from "../../assets/tw.jpg";
 import tura from "../../assets/25.png"
+import sc from "../../assets/ds3.png"
+import scm from "../../assets/dm4.png"
+
+import Rsvp from "./Rsvp";
 const container = {
   hidden: { opacity: 0 },
   visible: {
@@ -183,7 +187,19 @@ const Middle = () => {
 
   return (
     <div className="middle luxury_section">
+<div className="jkob">
+  <img src={sc} alt="" className="kob_img" />
+</div>
+
+
+<div className="jkobs">
+  <img src={scm} alt="" className="kob_img" />
+</div>
       <div className="miss">
+
+
+
+
         <motion.div 
           className="middle_grid"
           variants={container}
@@ -358,6 +374,7 @@ const Middle = () => {
           </motion.div>
         </motion.div>
       </div>
+      <Rsvp/>
     </div>
   );
 };
