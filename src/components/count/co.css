@@ -14,6 +14,17 @@
   margin-top: -60px;
   font-size: 80px !important;
 }
+
+
+
+.count_day{
+  font-family: "bik"!important;
+  font-size: 200px!important;
+  line-height: 40%;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  font-weight: 400!important;
+}
 .count_day,
 .count_value,
 .count_title {
@@ -145,16 +156,19 @@
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
-  .count_day {
-    font-size: 2px;
-  }
+.count_day{
+  font-family: "bik"!important;
+  font-size: 70px!important;
+  line-height: 40%;
+  margin-bottom:10px;
+  margin-top: 0px;
+  font-weight: 400!important;
+}
   .count_value {
     font-size: 10px;
   }
 
-  .count_day{
-    font-size: 24px;
-  }
+
   .count_title {
     font-size: 1px;
     width: 70%;

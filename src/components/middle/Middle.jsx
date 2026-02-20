@@ -223,7 +223,7 @@ const Middle = () => {
                 <div className="depth">
                   <motion.div className="names_container">
                     <motion.h2 
-                      className="middle_couple_name tos" 
+                      className="middle_couple_name tos pal"  
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >

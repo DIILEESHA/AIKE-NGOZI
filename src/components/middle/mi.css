@@ -56,7 +56,7 @@ position: relative;
   padding: 80px 0 0 0;
 }
 .rba {
-  font-size: 60px;
+  font-size: 40px;
 }
 .kuchiys {
   font-family: "raleway";
@@ -242,10 +242,11 @@ position: relative;
 }
 
 .tos {
-  font-weight: bold;
+  /* font-weight: bold;  */
+  font-weight: 500;
   text-transform: capitalize;
-  line-height: 150%;
-  font-size: 80px;
+  /* line-height: 100%; */
+  font-size: 140px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -255,18 +256,31 @@ position: relative;
     #aa771c 100%
   );
   -webkit-background-clip: text;
-  font-family: 'great';
   font-family: 'dancing';
+  font-family: 'bik';
+  /* font-family: 'great'; */
 
-  background-clip: text;
+
+  /* background-clip: text; */
   -webkit-text-fill-color: transparent;
+  z-index: 1;
+  position: relative;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 
+.pal{
+  margin-bottom: -20px;
+}
+.rba{
+  margin-bottom: -20px;
+}
+.musra{
+  /* margin-bottom: 40px; */
+}
 .year {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 40px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 100px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -277,7 +291,7 @@ position: relative;
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'dancing';
+  font-family: 'bik';
 
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   /* font-family: "Cinzel", serif; */
@@ -698,7 +712,7 @@ position: relative;
   }
 
   .tos {
-    font-size: 30px;
+    font-size: 80px;
   }
 
   .year {
@@ -750,14 +764,19 @@ position: relative;
     font-size: 10px;
   }
   .tos {
-    font-size: 46px;
+    font-size: 70px;
   }
-
+.pal,.musra,.rba{
+  margin-bottom: 0px;
+}
+.musra{
+  margin-top: 0;
+}
   .malka{
     margin: -10px 0;
   }
   .year {
-    font-size: 20px;
+    font-size: 50px;
   }
   .yearma {
     font-size: 16px;
@@ -772,7 +791,7 @@ position: relative;
   }
 
   .rsvp_title {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 150%;
   }
   .rsvp_sm_title {
