@@ -147,7 +147,7 @@ const Rsvp = () => {
 
   return (
     <div className="middle costa">
-      <div className="b">
+      {/* <div className="b"> */}
       {/* <div className="gom"> */}
 
         {/* <div className="jom"> */}
@@ -155,7 +155,7 @@ const Rsvp = () => {
         {/* </div> */}
         {/* <div className="sum"></div> */}
       {/* </div> */}
-      </div>
+      {/* </div> */}
 
       <div className="rsvp_area">
         <div className="middle_card luxury_card">
