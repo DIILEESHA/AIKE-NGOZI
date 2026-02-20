@@ -5,7 +5,7 @@ import start from "../../assets/stars.png";
 import susa from "../../assets/th.jpg";
 import susat from "../../assets/tw.jpg";
 import tura from "../../assets/25.png"
-import sc from "../../assets/ds3.png"
+import sc from "../../assets/ds3.PNG"
 import scm from "../../assets/dm4.png"
 
 import Rsvp from "./Rsvp";
