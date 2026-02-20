@@ -192,8 +192,9 @@
 .yearma {
   font-size: 30px;
   font-weight: bold;
-  text-transform: uppercase;
-  font-family: "Cinzel", serif;
+  text-transform: capitalize;
+  font-family: "raleway", serif;
+  font-style: italic;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
