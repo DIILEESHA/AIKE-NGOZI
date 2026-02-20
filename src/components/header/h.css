@@ -38,9 +38,9 @@
 
 .couple_name {
   font-family: "Cinzel", serif;
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 400;
-
+letter-spacing: 20.5px;
   /* Gold gradient */
   background: linear-gradient(
     135deg,
@@ -62,7 +62,8 @@
 
 .ui {
   font-family: "Dancing Script", cursive;
-  font-size: 45px;
+  font-size: 55px;
+  font-style: italic;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
@@ -96,6 +97,8 @@
 @media (max-width: 480px) {
   .couple_name {
     font-size: 42px;
+letter-spacing: 5.5px;
+
   }
   .ui {
     font-size: 26px;
