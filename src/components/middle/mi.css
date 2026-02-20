@@ -11,13 +11,14 @@ position: relative;
   width: 90%;
   height: 200px;
 }
-.jff{
-  width: 100%;
+
+  .jucy{
+  display: flex;align-items: center;justify-content: center;
+  margin: -150px auto -120px auto;
+  width: 90%;
   z-index: 1;
   position: relative;
-  /* margin: -600px 0; */
-  height: 100%;
-  object-fit: contain;
+  height: 350px;
 }
 .jkob {
   position: absolute;
