@@ -8,7 +8,6 @@ position: relative;
 .jkob {
   position: absolute;
   right: 0;
-  top: -150px;
   /* display: flex; */
   /* align-items: center; */
   /* justify-content: center; */
@@ -27,17 +26,12 @@ position: relative;
 .kob_img {
   width: 100%;
   height: auto;
-  opacity: 50%;
   object-fit: cover;
   object-position: center center;
   /* animation: gentle-breathe 6s ease-in-out infinite; */
 }
 
-@keyframes gentle-breathe {
-  0% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0.9; transform: scale(1); }
-}
+
 .gpo {
   margin-bottom: 30px;
 }
