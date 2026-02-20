@@ -56,7 +56,7 @@ position: relative;
   padding: 80px 0 0 0;
 }
 .rba {
-  font-size: 40px;
+  font-size: 60px;
 }
 .kuchiys {
   font-family: "raleway";
@@ -244,7 +244,8 @@ position: relative;
 .tos {
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 70px;
+  line-height: 150%;
+  font-size: 80px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
