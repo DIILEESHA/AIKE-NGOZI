@@ -41,6 +41,8 @@ position: relative;
 .kob_img {
   width: 100%;
   height: auto;
+  opacity: 40%;
+  position: relative;
   object-fit: cover;
   object-position: center center;
   /* animation: gentle-breathe 6s ease-in-out infinite; */
