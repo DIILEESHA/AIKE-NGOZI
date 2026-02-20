@@ -684,7 +684,8 @@ margin-bottom: 1px;
     font-size: 12px;
   }
   .rsvp_input {
-    padding: 16px;
+    padding: 10px;
+    font-size: 16px;
   }
 
   .submit_btn {
