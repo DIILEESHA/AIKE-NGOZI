@@ -10,7 +10,7 @@ const Home = () => (
   <>
     <Header />
     <Middle />
-    <Count />
+    {/* <Count /> */}
     <Rsvp/>
   </>
 );

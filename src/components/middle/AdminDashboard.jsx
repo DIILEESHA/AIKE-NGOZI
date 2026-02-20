@@ -10,6 +10,7 @@ import {
   Popconfirm,
   Card,
   Typography,
+  DatePicker,
 } from "antd";
 import {
   DownloadOutlined,
@@ -20,123 +21,183 @@ import {
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 import * as XLSX from "xlsx";
+import dayjs from "dayjs";
 
 const { Title } = Typography;
+const { RangePicker } = DatePicker;
 
 const AdminDashboard = () => {
-  const [rsvps, setRsvps] = useState([]);
+  const [addresses, setAddresses] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [viewModal, setViewModal] = useState(false);
-  const [selectedRsvp, setSelectedRsvp] = useState(null);
+  const [selectedRecord, setSelectedRecord] = useState(null);
+  const [searchText, setSearchText] = useState("");
+  const [dateRange, setDateRange] = useState([]);
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
 
-  // Dummy password
+  /* =========================
+     AUTH
+  ========================= */
+
   const handleLogin = () => {
     if (password === "an26!") {
       setAuthenticated(true);
-      fetchRsvps();
+      fetchData();
     } else {
       message.error("Incorrect password!");
     }
   };
 
-  // Fetch RSVPs
-  const fetchRsvps = async () => {
+  /* =========================
+     FETCH DATA
+  ========================= */
+
+  const fetchData = async () => {
     setLoading(true);
     try {
-      const querySnapshot = await getDocs(collection(db, "rsvps"));
-      const data = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
+      const snapshot = await getDocs(collection(db, "rsvps"));
+      const data = snapshot.docs.map((docItem) => ({
+        id: docItem.id,
+        ...docItem.data(),
       }));
-      setRsvps(data);
-    } catch (err) {
-      message.error("Failed to fetch RSVPs");
+      setAddresses(data);
+      setFilteredData(data);
+    } catch (error) {
+      console.error(error);
+      message.error("Failed to fetch addresses");
     }
     setLoading(false);
   };
 
-  // Delete RSVP
+  /* =========================
+     DELETE
+  ========================= */
+
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, "rsvps", id));
-      setRsvps(rsvps.filter((r) => r.id !== id));
-      message.success("RSVP deleted successfully");
-    } catch {
+      await deleteDoc(doc(db, "addresses", id));
+      const updated = addresses.filter((item) => item.id !== id);
+      setAddresses(updated);
+      setFilteredData(updated);
+      message.success("Deleted successfully");
+    } catch (error) {
+      console.error(error);
       message.error("Delete failed");
     }
   };
 
-  // Export Excel (Clean format)
+  /* =========================
+     SEARCH + FILTER
+  ========================= */
+
+  useEffect(() => {
+    let data = [...addresses];
+
+    // Search filter
+    if (searchText) {
+      data = data.filter((item) =>
+        `${item.firstName} ${item.lastName} ${item.email}`
+          .toLowerCase()
+          .includes(searchText.toLowerCase()),
+      );
+    }
+
+    // Date filter (using createdAt)
+    if (dateRange.length === 2) {
+      data = data.filter((item) => {
+        if (!item.createdAt?.seconds) return false;
+
+        const itemDate = dayjs(item.createdAt.seconds * 1000);
+
+        return (
+          itemDate.isAfter(dateRange[0].startOf("day")) &&
+          itemDate.isBefore(dateRange[1].endOf("day"))
+        );
+      });
+    }
+
+    setFilteredData(data);
+  }, [searchText, dateRange, addresses]);
+
+  /* =========================
+     EXPORT EXCEL
+  ========================= */
+
   const exportExcel = () => {
-    const formattedData = rsvps.map((item) => ({
+    const formatted = filteredData.map((item) => ({
       FirstName: item.firstName,
       LastName: item.lastName,
       Email: item.email,
-      AptSuite: item.aptSuite,
-      Zip: item.zip,
-      Country: item.country,
-      SubmittedAt: item.createdAt?.seconds
+      AddressLine1: item.addressLine1 || "",
+      AddressLine2: item.addressLine2 || "",
+      City: item.city || "",
+      State: item.state || "",
+      PostalCode: item.zip || "", // FIXED
+      Country: item.country || "",
+      Status: item.isComplete ? "Complete" : "Incomplete",
+      CreatedAt: item.createdAt?.seconds
         ? new Date(item.createdAt.seconds * 1000).toLocaleString()
         : "",
     }));
 
-    const worksheet = XLSX.utils.json_to_sheet(formattedData);
+    const worksheet = XLSX.utils.json_to_sheet(formatted);
     const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "RSVPs");
-    XLSX.writeFile(workbook, "RSVP_List.xlsx");
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Addresses");
+    XLSX.writeFile(workbook, "Address_List.xlsx");
   };
 
-  // Table Columns
+  /* =========================
+     TABLE COLUMNS
+  ========================= */
+
   const columns = [
     {
       title: "Full Name",
-      key: "name",
       render: (_, record) => (
-        <strong>{record.firstName} {record.lastName}</strong>
+        <strong>
+          {record.firstName} {record.lastName}
+        </strong>
       ),
-      responsive: ["md"],
     },
     {
       title: "Email",
       dataIndex: "email",
-      key: "email",
     },
     {
       title: "Country",
       dataIndex: "country",
-      key: "country",
-      render: (text) => (
-        <Badge color="blue" text={text || "N/A"} />
-      ),
-      responsive: ["lg"],
     },
     {
-      title: "Submitted",
-      dataIndex: "createdAt",
-      key: "createdAt",
-      render: (timestamp) =>
-        timestamp?.seconds
-          ? new Date(timestamp.seconds * 1000).toLocaleString()
+      title: "Status",
+      render: (_, record) => (
+        <Badge
+          color={record.isComplete ? "green" : "red"}
+          text={record.isComplete ? "Complete" : "Incomplete"}
+        />
+      ),
+    },
+    {
+      title: "Created",
+      render: (_, record) =>
+        record.createdAt?.seconds
+          ? new Date(record.createdAt.seconds * 1000).toLocaleString()
           : "N/A",
-      responsive: ["lg"],
     },
     {
       title: "Actions",
-      key: "actions",
       render: (_, record) => (
-        <Space wrap>
+        <Space>
           <Button
-            type="primary"
             icon={<EyeOutlined />}
             onClick={() => {
-              setSelectedRsvp(record);
+              setSelectedRecord(record);
               setViewModal(true);
             }}
           />
           <Popconfirm
-            title="Delete this RSVP?"
+            title="Delete this entry?"
             onConfirm={() => handleDelete(record.id)}
           >
             <Button danger icon={<DeleteOutlined />} />
@@ -146,7 +207,10 @@ const AdminDashboard = () => {
     },
   ];
 
-  // LOGIN SCREEN
+  /* =========================
+     LOGIN SCREEN
+  ========================= */
+
   if (!authenticated) {
     return (
       <div
@@ -155,7 +219,6 @@ const AdminDashboard = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "#f5f7fa",
         }}
       >
         <Card style={{ width: 350, textAlign: "center" }}>
@@ -176,7 +239,10 @@ const AdminDashboard = () => {
     );
   }
 
-  // DASHBOARD
+  /* =========================
+     DASHBOARD
+  ========================= */
+
   return (
     <div style={{ padding: 20 }}>
       <Card>
@@ -189,33 +255,43 @@ const AdminDashboard = () => {
           }}
         >
           <Title level={3} style={{ margin: 0 }}>
-            RSVP Admin Dashboard
+            Address Admin Dashboard
           </Title>
 
-          <Button
-            type="primary"
-            icon={<DownloadOutlined />}
-            onClick={exportExcel}
-          >
-            Download Excel
-          </Button>
+          <Space wrap>
+            <Input
+              placeholder="Search name or email..."
+              onChange={(e) => setSearchText(e.target.value)}
+              allowClear
+            />
+
+            <RangePicker onChange={(dates) => setDateRange(dates || [])} />
+
+            <Button
+              type="primary"
+              icon={<DownloadOutlined />}
+              onClick={exportExcel}
+            >
+              Export Excel
+            </Button>
+          </Space>
         </Space>
 
         <Table
           columns={columns}
-          dataSource={rsvps}
+          dataSource={filteredData}
           rowKey="id"
           loading={loading}
           bordered
-          scroll={{ x: "max-content" }}   // ✅ responsive horizontal scroll
+          scroll={{ x: "max-content" }}
           pagination={{ pageSize: 8 }}
         />
       </Card>
 
       {/* VIEW MODAL */}
       <Modal
-        open={viewModal}   // ✅ FIXED (AntD v5)
-        title="RSVP Full Details"
+        open={viewModal}
+        title="Full Address Details"
         onCancel={() => setViewModal(false)}
         footer={[
           <Button key="close" onClick={() => setViewModal(false)}>
@@ -223,19 +299,48 @@ const AdminDashboard = () => {
           </Button>,
         ]}
       >
-        {selectedRsvp && (
+        {selectedRecord && (
           <div style={{ lineHeight: 2 }}>
-            <p><strong>First Name:</strong> {selectedRsvp.firstName}</p>
-            <p><strong>Last Name:</strong> {selectedRsvp.lastName}</p>
-            <p><strong>Email:</strong> {selectedRsvp.email}</p>
-            <p><strong>Apt / Suite:</strong> {selectedRsvp.aptSuite || "N/A"}</p>
-            <p><strong>ZIP:</strong> {selectedRsvp.zip || "N/A"}</p>
-            <p><strong>Country:</strong> {selectedRsvp.country || "N/A"}</p>
-            <p><strong>Submitted At:</strong> {
-              selectedRsvp.createdAt?.seconds
-                ? new Date(selectedRsvp.createdAt.seconds * 1000).toLocaleString()
-                : "N/A"
-            }</p>
+            <p>
+              <strong>First Name:</strong> {selectedRecord.firstName}
+            </p>
+            <p>
+              <strong>Last Name:</strong> {selectedRecord.lastName}
+            </p>
+            <p>
+              <strong>Email:</strong> {selectedRecord.email}
+            </p>
+            <p>
+              <strong>Address Line 1:</strong> {selectedRecord.addressLine1}
+            </p>
+            <p>
+              <strong>Address Line 2:</strong>{" "}
+              {selectedRecord.addressLine2 || "N/A"}
+            </p>
+            <p>
+              <strong>City:</strong> {selectedRecord.city}
+            </p>
+            <p>
+              <strong>State:</strong> {selectedRecord.state || "N/A"}
+            </p>
+            <p>
+              <strong>Postal Code:</strong> {selectedRecord.zip || "N/A"}
+            </p>
+            <p>
+              <strong>Country:</strong> {selectedRecord.country}
+            </p>
+            <p>
+              <strong>Status:</strong>{" "}
+              {selectedRecord.isComplete ? "Complete" : "Incomplete"}
+            </p>
+            <p>
+              <strong>Created:</strong>{" "}
+              {selectedRecord.createdAt?.seconds
+                ? new Date(
+                    selectedRecord.createdAt.seconds * 1000,
+                  ).toLocaleString()
+                : "N/A"}
+            </p>
           </div>
         )}
       </Modal>

@@ -32,22 +32,21 @@ const Count = () => {
     return () => clearInterval(timer);
   }, []);
 
-
   const starFloat = {
-  hidden: { opacity: 0, scale: 0, rotate: -180 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    rotate: 0,
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 15,
-      bounce: 0.3,
-      delay: 0.8,
+    hidden: { opacity: 0, scale: 0, rotate: -180 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 15,
+        bounce: 0.3,
+        delay: 0.8,
+      },
     },
-  },
-};
+  };
 
   const renderNumber = (value) => (
     <AnimatePresence mode="wait">
@@ -74,23 +73,7 @@ const Count = () => {
         viewport={{ once: true }}
       >
         <div className="depth">
-          <h3 className="count_title">Counting Down to Our Celebration</h3>
-
-     <motion.div className="line" variants={starFloat}>
-                    <motion.img 
-                      src={start} 
-                      alt="Event Star" 
-                      className="star_img pagal"
-                      animate={{ 
-                        rotate: [360, 360],
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{ 
-                        rotate: { duration: 14, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 5, repeat: Infinity }
-                      }}
-                    />
-                  </motion.div>
+         
 
           <div className="count_grid">
             <div className="count_subs">
@@ -98,14 +81,29 @@ const Count = () => {
               <h3 className="count_value">Days</h3>
             </div>
 
+               <div className="count_subs drt">
+              <h3 className="count_value frt">.</h3>
+            </div>
+
             <div className="count_subs">
               {renderNumber(timeLeft.hours || 0)}
               <h3 className="count_value">Hours</h3>
             </div>
 
+
+    <div className="count_subs drt">
+              <h3 className="count_value frt">.</h3>
+            </div>
+
             <div className="count_subs">
               {renderNumber(timeLeft.minutes || 0)}
               <h3 className="count_value">Minutes</h3>
+            </div>
+
+
+
+    <div className="count_subs drt">
+              <h3 className="count_value frt">.</h3>
             </div>
 
             <div className="count_subs">

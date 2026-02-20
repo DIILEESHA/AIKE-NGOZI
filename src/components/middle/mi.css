@@ -4,7 +4,40 @@
   background-image: url("../../assets/beige.avif");
   width: 100%;
 }
+.gpo {
+  margin-bottom: 30px;
+}
+.costa {
+  padding: 80px 0 0 0;
+}
+.b {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 
+  height: 340px;
+  background-color: #d4af37; /* metallic gold */
+  background-color: #1a1a1a5b;
+  background-image: url("../../assets/blue.JPG");
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.b::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #1a2b44b0;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .miss {
   max-width: 1600px;
   margin: 0 auto;
@@ -41,13 +74,32 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #1a1a1a43;
+  background-color: #1a2b44;
+  background-color: #1a2b44b0;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.cio {
+  position: relative;
+  z-index: 1;
+}
+.gops {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.rsvp_sub:nth-child(9) {
+  grid-column: 1/3;
+}
+.rsvp_sub:nth-child(10) {
+  grid-column: 1/3;
+}
 /* Gradient Borders */
 .dosh {
   border: 5px solid;
@@ -59,6 +111,8 @@
     #d4af37,
     #8c6239
   );
+  position: relative;
+  z-index: 1;
   border-image-slice: 1;
   padding: 5px;
 }
@@ -193,8 +247,8 @@
 
 /* RSVP Form */
 .rsvp_area {
-  padding: 80px 0;
-  max-width: 700px;
+  padding: 0 0 80px 0;
+  max-width: 1000px;
   margin: 0px auto;
 }
 
@@ -240,7 +294,7 @@
 .rsvp_p {
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 15px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -254,11 +308,13 @@
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   font-family: "Cinzel", serif;
 }
-
+.rsvp_sm_title {
+  font-size: 20px;
+}
 .rsvp_title {
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 35px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -270,7 +326,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 20px auto;
-  width: 70%;
+  width: 100%;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   font-family: "Cinzel", serif;
 }
@@ -356,7 +412,11 @@
   }
 
   .rsvp_area {
-    padding: 60px 10px;
+    padding: 0px 10px 40px 10px;
+  }
+
+  .gpo {
+    margin-bottom: 10px;
   }
 }
 
@@ -366,15 +426,12 @@
     padding: 50px 30px;
     gap: 20px;
   }
-
   .depth {
     padding: 30px;
   }
-
   .rsvp_formy {
     gap: 20px;
   }
-
   .submit_btn {
     width: 100%;
   }
@@ -385,27 +442,37 @@
   .middle_grid {
     padding: 40px 20px;
   }
-
+  .b {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    /* padding: 20px; */
+    height: 200px;
+    background-color: #d4af37; /* metallic gold */
+    background-color: #1a1a1a5b;
+    /* background-image: url("../../assets/blue.JPG"); */
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
   .tos {
     font-size: 36px;
   }
-
   .year {
     font-size: 26px;
   }
-
   .yearma {
     font-size: 20px;
   }
-
   .inside_img {
     height: 40vh;
   }
-
   .rsvp_formy {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
-
   .rsvp_sub:nth-child(3),
   .rsvp_sub:nth-child(6) {
     grid-column: auto;
@@ -417,9 +484,9 @@
   .middle_card {
     padding: 5px;
   }
-.rsvp_label{
+  .rsvp_label {
     font-size: 14px;
-}
+  }
   .depth {
     padding: 20px;
   }
@@ -431,9 +498,9 @@
   .year {
     font-size: 22px;
   }
-.go{
+  .go {
     gap: 10px;
-}
+  }
   .yearma {
     font-size: 18px;
   }
@@ -442,13 +509,13 @@
     width: 100%;
     font-size: 22px;
   }
-.ii{
+  .ii {
     display: none;
-}
-.middle_sub{
+  }
+  .middle_sub {
     margin-top: 20px;
     margin-bottom: -20px;
-}
+  }
   .submit_btn {
     padding: 15px 30px;
     font-size: 12px;
@@ -461,33 +528,35 @@
   .middle_grid {
     padding: 30px 15px;
   }
+  .costa {
+    padding: 0;
+  }
 
+
+
+  .rsvp_input::placeholder{
+    font-size: 10px;
+  }
   .tos {
     font-size: 26px;
   }
-
   .year {
     font-size: 20px;
   }
-
   .yearma {
     font-size: 16px;
   }
-
   .star_img {
     width: 80%;
     margin: 0 auto;
   }
-
   .inside_img {
     height: 35vh;
   }
-
   .rsvp_sm_title,
   .rsvp_p {
     font-size: 16px;
   }
-
   .rsvp_input {
     padding: 12px;
   }
