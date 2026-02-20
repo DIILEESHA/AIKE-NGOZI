@@ -229,7 +229,7 @@ padding: 20px;
 }
 
 .yearma {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-transform: capitalize;
   font-family: "raleway", serif;
@@ -254,10 +254,10 @@ padding: 20px;
 }
 
 .tf_img {
-  width: 250px;
+  width: 650px;
   object-fit: contain;
-  margin-top: -40px;
-  margin-bottom: -20px;
+  margin-top: -110px;
+  margin-bottom: -100px;
 }
 
 .img_card {
