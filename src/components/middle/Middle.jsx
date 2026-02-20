@@ -267,14 +267,8 @@ const Middle = () => {
 
           {/* RIGHT SIDE - Luxury Images */}
           <motion.div className="middle_sub kas">
-            <motion.div
+            <div
               className="img_card luxury_img"
-              variants={imageLuxuryReveal}
-              whileHover={imageHover.hover}
-              whileTap={imageHover.tap}
-              drag
-              dragElastic={0.2}
-              dragConstraints={{ top: -10, left: -10, right: 10, bottom: 10 }}
             >
               <div className="depths">
                 <motion.img 
@@ -291,33 +285,20 @@ const Middle = () => {
                   transition={{ duration: 3, repeat: Infinity }}
                 />
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <div
               className="img_card luxury_img ii"
-              variants={imageLuxuryReveal}
-              whileHover={imageHover.hover}
-              whileTap={imageHover.tap}
-              drag
-              dragElastic={0.2}
-              dragConstraints={{ top: -10, left: -10, right: 10, bottom: 10 }}
             >
               <div className="depths">
                 <motion.img 
                   src={susat} 
                   alt="Love Eternal" 
                   className="inside_img"
-                  animate={{
-                    filter: [
-                      "brightness(1) contrast(1)",
-                      "brightness(1.05) contrast(1.02)",
-                      "brightness(1) contrast(1)",
-                    ],
-                  }}
-                  transition={{ duration: 3.5, repeat: Infinity }}
+                  
                 />
               </div>
-            </motion.div>
+            </div>
           </motion.div>
 
 

@@ -1,4 +1,6 @@
 .middle {
+  overflow: hidden;
+
   background-image: url("../../assets/beige.avif");
   width: 100%;
 }
@@ -8,42 +10,85 @@
 .costa {
   padding: 80px 0 0 0;
 }
+
+.kuchiys {
+  font-family: "raleway";
+  text-align: left;
+  margin-top: 5px;
+  font-size: 11px !important;
+}
+/* If you still want the ::after for a specific effect (like a border or gradient) */
 .b {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   height: 340px;
-  background-color: #1a2b44; /* Your theme's navy blue */
+  background-color: #1a2b44;
+  /* padding: 20px; */
+  position: relative;
+  margin-bottom: 4px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+
+.gom{
+position: absolute;
+inset: 0;
+display: flex;align-items: center;justify-content: center;
+padding: 20px;
+}
+
+.jom{
+    width: 100%;
+  max-width: 910px;
+  margin: 0 auto;
+  height: 320px;
+  padding: 20px;
+  background-color: #8c6239;
+  /* padding: 20px; */
   position: relative;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  margin-bottom: -1px; /* Fixes the gap/notch issue */
 }
-.kuchiys {
-  font-family: "raleway";
-  text-align: left;
-  margin-top: 5px;
-  font-size: 11px!important;
-}
-/* If you still want the ::after for a specific effect (like a border or gradient) */
-.b::after {
+.sum{
+    width: 100%;
+    padding: 20px;
+  max-width: 880px;
   position: absolute;
-  content: "";
-  inset: 0;
-  background-color: #1a2b44; /* Ensure this is solid if you want to hide the image */
+  margin: 0 auto;
+  height: 310px;
+  background-color: #92908f;
+  background-color: #1a2b44;
+
+  /* padding: 20px; */
+  /* position: relative; */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
+/* INNER BORDER EFFECT */
+.b::after {
+  /* background-image: url("../../assets/traingle.png"); */
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
 .miss {
   max-width: 1300px;
   margin: 0 auto;
 }
-.kami{
+.kami {
   max-width: 700px;
   margin: 0 auto;
 }
 .middle_grid {
   padding: 80px;
-
 }
-.kas{
+.kas {
   display: flex;
   margin: 30px 0;
   gap: 40px;
@@ -91,7 +136,6 @@
   margin: 0 auto;
   z-index: -1;
 }
-
 
 /* Gradient Borders */
 .dosh {
@@ -206,10 +250,10 @@
 .star_img {
   width: 100%;
   height: auto;
-  margin:-150px 0
+  margin: -150px 0;
 }
 
-.tf_img{
+.tf_img {
   width: 250px;
   object-fit: contain;
   margin-top: -40px;
@@ -256,32 +300,34 @@
 }
 
 .rsvp_formy {
-display: grid;
-margin-top: 50px;
-grid-template-columns: repeat(4,1fr);
-gap: 10px;
-row-gap: 30px;
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  row-gap: 30px;
 }
 
-.rsvp_sub:nth-child(1){
+.rsvp_sub:nth-child(1) {
   grid-column: 1/3;
 }
-.rsvp_sub:nth-child(2){
+.rsvp_sub:nth-child(2) {
   grid-column: 3/5;
 }
 
-.rsvp_sub:nth-child(6){
+.rsvp_sub:nth-child(6) {
   grid-column: 1/3;
 }
 
-.rsvp_sub:nth-child(9){
+.rsvp_sub:nth-child(9) {
   grid-column: 1/5;
 }
 
-.rsvp_sub:nth-child(10){
+.rsvp_sub:nth-child(10) {
   grid-column: 1/5;
 }
-.rsvp_sub:nth-child(3),.rsvp_sub:nth-child(4),.rsvp_sub:nth-child(5){
+.rsvp_sub:nth-child(3),
+.rsvp_sub:nth-child(4),
+.rsvp_sub:nth-child(5) {
   grid-column: 1/5;
 }
 .rsvp_input_area {
@@ -316,7 +362,7 @@ row-gap: 30px;
 .rsvp_p {
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 15px;
+  /* font-size: 35px; */
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -330,13 +376,19 @@ row-gap: 30px;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   font-family: "Cinzel", serif;
 }
-.rsvp_sm_title {
+
+.rsvp_p {
+  font-family: "raleway";
+  text-transform: capitalize;
   font-size: 20px;
 }
+.rsvp_sm_title {
+  font-size: 25px;
+}
 .rsvp_title {
-  font-weight: bold;
+  /* font-weight: bold; */
   text-transform: capitalize;
-  font-size: 35px;
+  font-size: 45px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -350,7 +402,8 @@ row-gap: 30px;
   margin: 20px auto;
   width: 100%;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-  font-family: "Cinzel", serif;
+  font-family: "Playfair Display", serif;
+  font-family: "raleway", serif;
 }
 
 /* Submit Button Luxury Gold */
@@ -416,12 +469,12 @@ row-gap: 30px;
 
 /* Laptop / Small Desktop 1200px */
 @media (max-width: 1200px) {
-.middle_grid {
-  padding: 80px;
-  /* display: grid; */
-  /* grid-template-columns: 1fr ; */
-  gap: 100px;
-}
+  .middle_grid {
+    padding: 80px;
+    /* display: grid; */
+    /* grid-template-columns: 1fr ; */
+    gap: 100px;
+  }
 
   .go {
     order: 2;
@@ -469,12 +522,13 @@ row-gap: 30px;
   .b {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     width: 100%;
-    max-width: 95%;
+    max-width: 96%;
     margin: 0 auto;
     /* padding: 20px; */
     height: 200px;
-    background-color: #d4af37; /* metallic gold */
-    background-color: #1a1a1a5b;
+    background-color: #1a1a1ace;
+  background-color: #1a2b44;
+margin-bottom: 2px;
     /* background-image: url("../../assets/blue.JPG"); */
     position: relative;
     background-size: cover;
@@ -498,33 +552,35 @@ row-gap: 30px;
     /* display: flex; */
     /* flex-direction: column; */
   }
- .rsvp_sub:nth-child(1){
-  grid-column: 1/3;
-}
-.rsvp_sub:nth-child(2){
-  grid-column: 3/5;
-}
+  .rsvp_sub:nth-child(1) {
+    grid-column: 1/5;
+  }
+  .rsvp_sub:nth-child(2) {
+    grid-column: 1/5;
+  }
 
-.rsvp_sub:nth-child(6){
-  grid-column: 1/5;
-}
-.rsvp_sub:nth-child(7){
-  grid-column: 1/3;
-}
+  .rsvp_sub:nth-child(6) {
+    grid-column: 1/5;
+  }
+  .rsvp_sub:nth-child(7) {
+    grid-column: 1/3;
+  }
 
-.rsvp_sub:nth-child(8){
-  grid-column: 3/5;
-}
-.rsvp_sub:nth-child(9){
-  grid-column: 1/5;
-}
+  .rsvp_sub:nth-child(8) {
+    grid-column: 3/5;
+  }
+  .rsvp_sub:nth-child(9) {
+    grid-column: 1/5;
+  }
 
-.rsvp_sub:nth-child(10){
-  grid-column: 1/5;
-}
-.rsvp_sub:nth-child(3),.rsvp_sub:nth-child(4),.rsvp_sub:nth-child(5){
-  grid-column: 1/5;
-}
+  .rsvp_sub:nth-child(10) {
+    grid-column: 1/5;
+  }
+  .rsvp_sub:nth-child(3),
+  .rsvp_sub:nth-child(4),
+  .rsvp_sub:nth-child(5) {
+    grid-column: 1/5;
+  }
 }
 
 /* Mobile Large 600px */
@@ -558,17 +614,20 @@ row-gap: 30px;
     font-size: 22px;
   }
 
-  .kas{
-    gap: 0;
-    display: flex;flex-direction: column;
+  .kas {
+    /* margin: 200px 0; */
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
   }
   .ii {
-    display: flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
     /* display: none; */
   }
   .middle_sub {
     margin-top: 20px;
-    margin-bottom: -20px;
+    /* margin-bottom: -20px; */
   }
   .submit_btn {
     padding: 15px 30px;
@@ -605,13 +664,21 @@ row-gap: 30px;
   .inside_img {
     height: 45vh;
   }
-  .rsvp_sm_title,
-  .rsvp_p {
-    font-size: 10px;
+
+  .rsvp_title{
+    font-size: 25px;
+    line-height: 150%;
+  }
+  .rsvp_sm_title{
+    font-size: 16px;
   }
 
 
-  .rsvp_label{
+  .rsvp_p{
+    font-size: 12px!important;
+  }
+
+  .rsvp_label {
     margin-bottom: 2px;
     font-size: 12px;
   }

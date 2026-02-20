@@ -67,6 +67,7 @@
 }
 .count {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   padding: 10px;
   /* align-items: center; */
@@ -112,18 +113,18 @@
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
   .count_day {
-    font-size: 45px;
+    font-size: 25px;
   }
 
 .josa{
-  display: none;
+  /* display: none; */
 }
 
   .drt{
     display: none;
   }
   .count_value {
-    font-size: 18px;
+    font-size: 14px;
   }
   .count_title {
     font-size: 24px;
@@ -141,14 +142,14 @@
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
   .count_day {
-    font-size: 36px;
+    font-size: 2px;
   }
   .count_value {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .count_day{
-    font-size: 28px;
+    font-size: 24px;
   }
   .count_title {
     font-size: 1px;

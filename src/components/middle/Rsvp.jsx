@@ -5,7 +5,7 @@ import Select from "react-select";
 import countryList from "react-select-country-list";
 import Count from "../count/Count";
 import "react-toastify/dist/ReactToastify.css";
-
+import gomz from "../../assets/traingle.png";
 // Custom Select Styles (UPDATED ONLY REQUIRED PARTS)
 const customSelectStyles = {
   control: (provided, state) => ({
@@ -22,7 +22,7 @@ const customSelectStyles = {
   // ✅ FIXED — was black
   menu: (provided) => ({
     ...provided,
-    backgroundColor: "#fbf5e9",   // soft wedding ivory
+    backgroundColor: "#fbf5e9", // soft wedding ivory
     borderRadius: "0px",
     zIndex: 9999,
   }),
@@ -31,14 +31,14 @@ const customSelectStyles = {
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isFocused ? "#c6a972" : "transparent",
-    color: state.isFocused ? "#000" : "#333",  // was white
+    color: state.isFocused ? "#000" : "#333", // was white
     cursor: "pointer",
   }),
 
   // ✅ FIXED selected value color
   singleValue: (provided) => ({
     ...provided,
-    color: "#333",  // visible now
+    color: "#333", // visible now
     fontFamily: "Raleway",
     fontSize: "16px",
   }),
@@ -46,7 +46,7 @@ const customSelectStyles = {
   // ✅ FIXED placeholder visibility
   placeholder: (provided) => ({
     ...provided,
-    color: "rgba(0,0,0,0.5)",  // was white
+    color: "rgba(0,0,0,0.5)", // was white
   }),
 
   // optional small improvement
@@ -139,22 +139,25 @@ const Rsvp = () => {
 
   return (
     <div className="middle costa">
-      <div className="b"></div>
+      <div className="b">
+      {/* <div className="gom"> */}
+
+        {/* <div className="jom"> */}
+
+        {/* </div> */}
+        {/* <div className="sum"></div> */}
+      {/* </div> */}
+      </div>
 
       <div className="rsvp_area">
         <div className="middle_card luxury_card">
           <div className="dosh">
             <div className="depth">
               <h2 className="rsvp_sm_title">WITH GRATITUDE</h2>
-              <h1 className="rsvp_title">
-                Please Share Your Mailing Address
-              </h1>
-              <h3 className="rsvp_p">
-                So we may send your formal invitation
-              </h3>
+              <h1 className="rsvp_title">Please Share Your Mailing Address</h1>
+              <h3 className="rsvp_p">So we may send your formal invitation</h3>
 
               <form className="rsvp_formy" onSubmit={handleSubmit}>
-
                 {/* FIRST NAME */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
@@ -171,7 +174,10 @@ const Rsvp = () => {
                       }}
                     />
                     {errors.firstName && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.firstName}
                       </span>
                     )}
@@ -194,7 +200,10 @@ const Rsvp = () => {
                       }}
                     />
                     {errors.lastName && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.lastName}
                       </span>
                     )}
@@ -217,7 +226,10 @@ const Rsvp = () => {
                       }}
                     />
                     {errors.email && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.email}
                       </span>
                     )}
@@ -242,7 +254,10 @@ const Rsvp = () => {
                       }}
                     />
                     {errors.streetAddress && (
-                      <span  className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.streetAddress}
                       </span>
                     )}
@@ -282,7 +297,10 @@ const Rsvp = () => {
                       }}
                     />
                     {errors.city && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.city}
                       </span>
                     )}
@@ -307,9 +325,7 @@ const Rsvp = () => {
                 {/* ZIP */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
-                    <label className="rsvp_label">
-                      ZIP CODE
-                    </label>
+                    <label className="rsvp_label">ZIP CODE</label>
                     <input
                       type="text"
                       name="zip"
@@ -328,14 +344,17 @@ const Rsvp = () => {
                     <Select
                       options={options}
                       value={options.find(
-                        (option) => option.label === formData.country
+                        (option) => option.label === formData.country,
                       )}
                       onChange={handleCountryChange}
                       placeholder="Select Your Country"
                       styles={customSelectStyles}
                     />
                     {errors.country && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.country}
                       </span>
                     )}
@@ -350,7 +369,6 @@ const Rsvp = () => {
                     </button>
                   </div>
                 </div>
-
               </form>
 
               {submitted && (

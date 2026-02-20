@@ -2,6 +2,8 @@
 
 .header_container {
   background-image: url("../../assets/couple2.jpg");
+  overflow: hidden;
+
   background-size: cover;
   background-position: center 30%;
   position: relative;
