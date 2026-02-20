@@ -283,7 +283,7 @@ const Rsvp = () => {
                       type="text"
                       name="addressLine2"
                       value={formData.addressLine2}
-                      placeholder="Apartment, Suite, Unit, etc. (Optional)"
+                      placeholder="Address 2"
                       className="rsvp_input"
                       onChange={handleChange}
                     />

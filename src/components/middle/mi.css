@@ -272,7 +272,7 @@ position: relative;
   margin-bottom: -20px;
 }
 .rba{
-  margin-bottom: -20px;
+  margin-bottom: -40px;
 }
 .musra{
   /* margin-bottom: 40px; */
@@ -767,7 +767,7 @@ position: relative;
     font-size: 70px;
   }
 .pal,.musra,.rba{
-  margin-bottom: 0px;
+  margin-bottom: -19px;
 }
 .musra{
   margin-top: 0;
