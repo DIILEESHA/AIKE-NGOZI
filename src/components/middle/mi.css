@@ -5,6 +5,20 @@ position: relative;
   width: 100%;
 }
 
+.jucy{
+  display: flex;align-items: center;justify-content: center;
+  margin: -50px auto;
+  width: 90%;
+  height: 200px;
+}
+.jff{
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  /* margin: -600px 0; */
+  height: 100%;
+  object-fit: contain;
+}
 .jkob {
   position: absolute;
   right: 0;
@@ -572,6 +586,19 @@ position: relative;
     font-size: 36px;
   }
 
+
+  .jucy{
+  display: flex;align-items: center;justify-content: center;
+  margin: -150px auto -120px auto;
+  width: 90%;
+  height: 350px;
+}
+
+
+.jff{
+  height: 700px;
+  object-fit: cover;
+}
   .rba {
     font-size: 25px;
   }

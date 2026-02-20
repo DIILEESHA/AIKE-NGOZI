@@ -375,6 +375,12 @@ const Middle = () => {
         </motion.div>
       </div>
       <Rsvp/>
+      <div className="jucy">
+
+      <img className="jff" src={start} alt="" />
+      </div>
+
+
     </div>
   );
 };
