@@ -780,9 +780,12 @@ position: relative;
   }
   .year {
     font-size: 50px;
+    line-height: 50%;
+    margin-bottom: 15px;
   }
   .yearma {
     font-size: 16px;
+    margin-top: 10px;
   }
   .star_img {
     width: 80%;
