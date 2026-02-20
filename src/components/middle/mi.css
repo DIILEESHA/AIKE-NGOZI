@@ -837,7 +837,7 @@ position: relative;
 }
   .kob_img{
     object-fit: contain;
-    opacity: 90%;
+    opacity: 75%;
     height: 100%;
   }
 
