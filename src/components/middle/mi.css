@@ -10,7 +10,9 @@
 .costa {
   padding: 80px 0 0 0;
 }
-
+.rba{
+  font-size: 40px;
+}
 .kuchiys {
   font-family: "raleway";
   text-align: left;
@@ -540,6 +542,11 @@
   .tos {
     font-size: 36px;
   }
+
+
+  .rba{
+  font-size: 25px;
+}
   .year {
     font-size: 26px;
   }

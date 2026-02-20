@@ -213,7 +213,7 @@ const Middle = () => {
                     >
                       AIKE
                     </motion.h2>
-                    <motion.h2 className="middle_couple_name">&</motion.h2>
+                    <motion.h2 className="middle_couple_name rba">&</motion.h2>
                     <motion.h2 
                       className="middle_couple_name tos musra" 
                       variants={nameReveal}
