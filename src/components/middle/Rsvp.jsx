@@ -11,7 +11,8 @@ const customSelectStyles = {
   control: (provided, state) => ({
     ...provided,
     backgroundColor: "#fbf5e9",
-    border: "1px solid rgba(255,255,255,0.4)",
+    border: "2px solid #d4af37",
+    fontFamily:"poppins",
     borderRadius: "0px",
     padding: "6px 10px",
     boxShadow: state.isFocused ? "0 0 0 1px #c6a972" : "none",
@@ -57,6 +58,13 @@ const customSelectStyles = {
 
   indicatorSeparator: () => ({
     display: "none",
+  }),
+  placeholder: (provided) => ({
+    ...provided,
+    color: "rgba(0, 0, 0, 0.6)", // adjust color if needed
+    fontSize: "11px", // set font size
+    textAlign:"left",
+    fontFamily: "Raleway",
   }),
 };
 
@@ -342,6 +350,7 @@ const Rsvp = () => {
                   <div className="rsvp_input_area">
                     <label className="rsvp_label">COUNTRY *</label>
                     <Select
+                    
                       options={options}
                       value={options.find(
                         (option) => option.label === formData.country,

@@ -342,7 +342,7 @@ padding: 20px;
 }
 
 .rsvp_input {
-  border: 3px solid;
+  border: 2px solid;
   border-image-source: linear-gradient(
     45deg,
     #8c6239,
@@ -522,13 +522,14 @@ padding: 20px;
   .b {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     width: 100%;
-    max-width: 96%;
+    max-width: 95%;
     margin: 0 auto;
+    margin-top: 30px;
     /* padding: 20px; */
     height: 200px;
     background-color: #1a1a1ace;
   background-color: #1a2b44;
-margin-bottom: 2px;
+margin-bottom: 1px;
     /* background-image: url("../../assets/blue.JPG"); */
     position: relative;
     background-size: cover;
@@ -648,7 +649,7 @@ margin-bottom: 2px;
     font-size: 10px;
   }
   .tos {
-    font-size: 26px;
+    font-size: 36px;
   }
   .year {
     font-size: 20px;
