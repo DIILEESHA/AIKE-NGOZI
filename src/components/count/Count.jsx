@@ -1,7 +1,6 @@
 import "./co.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import start from "../../assets/star.png";
 
 const targetDate = new Date("2026-10-11T00:00:00");
 
@@ -32,23 +31,7 @@ const Count = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const starFloat = {
-    hidden: { opacity: 0, scale: 0, rotate: -180 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 15,
-        bounce: 0.3,
-        delay: 0.8,
-      },
-    },
-  };
-
-  // Updated renderNumber with fade + scale transition
+  // Updated renderNumber with fade + scale transition on number change
   const renderNumber = (value) => (
     <AnimatePresence mode="wait">
       <motion.h2
@@ -56,7 +39,7 @@ const Count = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="count_day"
       >
         {value < 10 ? `0${value}` : value}
@@ -66,13 +49,7 @@ const Count = () => {
 
   return (
     <section className="count luxury_count">
-      <motion.div
-        className="luxury_card_count"
-        initial={{ opacity: 0, y: 120, scale: 0.9 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true }}
-      >
+      <div className="luxury_card_count">
         <div className="depth">
           <div className="count_grid">
             <div className="count_subs">
@@ -108,7 +85,7 @@ const Count = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
