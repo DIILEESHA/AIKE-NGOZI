@@ -1,4 +1,3 @@
-/* ------------------ BASE STYLES ------------------ */
 
 .middle {
   background-image: url("../../assets/beige.avif");
@@ -11,32 +10,22 @@
   padding: 80px 0 0 0;
 }
 .b {
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-
   height: 340px;
-  background-color: #d4af37; /* metallic gold */
-  background-color: #1a1a1a5b;
-  background-image: url("../../assets/blue.JPG");
+  background-color: #1a2b44; /* Your theme's navy blue */
   position: relative;
-  background-size: cover;
-  background-position: center center;
-
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  margin-bottom: -1px; /* Fixes the gap/notch issue */
 }
 
+/* If you still want the ::after for a specific effect (like a border or gradient) */
 .b::after {
   position: absolute;
   content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #1a2b44b0;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #1a2b44; /* Ensure this is solid if you want to hide the image */
 }
 .miss {
   max-width: 1600px;
@@ -531,9 +520,6 @@
   .costa {
     padding: 0;
   }
-
-
-
   .rsvp_input::placeholder{
     font-size: 10px;
   }
