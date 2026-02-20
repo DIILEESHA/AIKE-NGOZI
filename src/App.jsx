@@ -16,17 +16,18 @@ const Home = () => (
 );
 
 const Footer = () => (
-  <footer className="footer_container">
-    <h2 className="footer_gradient_text">AIKE & NGOZI</h2>
-    <p className="footer_text">Celebrating love, laughter, and 25 years of togetherness</p>
-    <p className="footer_small">© 2026 AIKE & NGOZI. All rights reserved.</p>
+  <></>
+  // <footer className="footer_container">
+  //   <h2 className="footer_gradient_text">AIKE & NGOZI</h2>
+  //   <p className="footer_text">Celebrating love, laughter, and 25 years of togetherness</p>
+  //   <p className="footer_small">© 2026 AIKE & NGOZI. All rights reserved.</p>
 
-    <div className="footer_social">
-      <a href="#"><i className="fab fa-instagram"></i></a>
-      <a href="#"><i className="fab fa-facebook"></i></a>
-      <a href="#"><i className="fab fa-pinterest"></i></a>
-    </div>
-  </footer>
+  //   <div className="footer_social">
+  //     <a href="#"><i className="fab fa-instagram"></i></a>
+  //     <a href="#"><i className="fab fa-facebook"></i></a>
+  //     <a href="#"><i className="fab fa-pinterest"></i></a>
+  //   </div>
+  // </footer>
 );
 
 const AppWrapper = () => {

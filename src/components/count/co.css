@@ -115,7 +115,9 @@
     font-size: 45px;
   }
 
-
+.josa{
+  display: none;
+}
 
   .drt{
     display: none;
@@ -129,7 +131,7 @@
   }
   .count_grid {
     gap: 15px;
-    flex-wrap: wrap;
+    display: flex;
   }
   .pagal {
     width: 350px !important;
@@ -142,17 +144,21 @@
     font-size: 36px;
   }
   .count_value {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .count_day{
+    font-size: 28px;
   }
   .count_title {
-    font-size: 18px;
+    font-size: 1px;
     width: 70%;
   }
   .count_grid {
-    gap: 10px;
-    display: grid;
-    padding: 0px 0 20px 0;
-    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    /* display: grid; */
+    /* padding: 0px 0 20px 0; */
+    /* grid-template-columns: 1fr 1fr; */
   }
   .pagal {
     width: 300px !important;

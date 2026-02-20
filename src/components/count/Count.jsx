@@ -95,7 +95,7 @@ const Count = () => {
               <h3 className="count_value frt">.</h3>
             </div>
 
-            <div className="count_subs">
+            <div className="count_subs josa">
               {renderNumber(timeLeft.minutes || 0)}
               <h3 className="count_value">Minutes</h3>
             </div>
