@@ -48,14 +48,15 @@ const Count = () => {
     },
   };
 
+  // Updated renderNumber with fade + scale transition
   const renderNumber = (value) => (
     <AnimatePresence mode="wait">
       <motion.h2
         key={value}
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -40, opacity: 0 }}
-        transition={{ duration: 0.4 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         className="count_day"
       >
         {value < 10 ? `0${value}` : value}
@@ -66,22 +67,20 @@ const Count = () => {
   return (
     <section className="count luxury_count">
       <motion.div
-        className=" luxury_card_count"
+        className="luxury_card_count"
         initial={{ opacity: 0, y: 120, scale: 0.9 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         viewport={{ once: true }}
       >
         <div className="depth">
-         
-
           <div className="count_grid">
             <div className="count_subs">
               {renderNumber(timeLeft.days || 0)}
               <h3 className="count_value">Days</h3>
             </div>
 
-               <div className="count_subs drt">
+            <div className="count_subs drt">
               <h3 className="count_value frt">.</h3>
             </div>
 
@@ -90,8 +89,7 @@ const Count = () => {
               <h3 className="count_value">Hours</h3>
             </div>
 
-
-    <div className="count_subs drt">
+            <div className="count_subs drt">
               <h3 className="count_value frt">.</h3>
             </div>
 
@@ -100,9 +98,7 @@ const Count = () => {
               <h3 className="count_value">Minutes</h3>
             </div>
 
-
-
-    <div className="count_subs drt">
+            <div className="count_subs drt">
               <h3 className="count_value frt">.</h3>
             </div>
 
