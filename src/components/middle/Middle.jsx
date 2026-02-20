@@ -227,7 +227,7 @@ const Middle = () => {
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
-                      AIKE
+                      Aike
                     </motion.h2>
                     <motion.h2 className="middle_couple_name rba">&</motion.h2>
                     <motion.h2 
@@ -235,7 +235,7 @@ const Middle = () => {
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
-                      NGOZI
+                      Ngozi
                     </motion.h2>
                   </motion.div>
 
@@ -346,7 +346,7 @@ const Middle = () => {
                     September 11-13, 2026
                   </motion.h2>
 
-                  <motion.div className="line" variants={starFloat}>
+                  <motion.div className="line malka" variants={starFloat}>
                     <motion.img 
                       src={start} 
                       alt="Event Star" 

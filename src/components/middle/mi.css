@@ -167,7 +167,7 @@ position: relative;
   width: 100%;
   height: 100%;
   background-color: #1a2b44;
-  background-color: #1a2b44b0;
+  background-color: #203c65a1;
   inset: 0;
   display: flex;
   align-items: center;
@@ -243,7 +243,7 @@ position: relative;
 
 .tos {
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 70px;
   background: linear-gradient(
     to bottom,
@@ -254,6 +254,9 @@ position: relative;
     #aa771c 100%
   );
   -webkit-background-clip: text;
+  font-family: 'great';
+  font-family: 'dancing';
+
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
@@ -273,8 +276,10 @@ position: relative;
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'dancing';
+
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-  font-family: "Cinzel", serif;
+  /* font-family: "Cinzel", serif; */
 }
 
 .yearma {
@@ -325,6 +330,8 @@ position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 72, 0.467);
+  background-color: #203c65a1;
+
   inset: 0;
   display: flex;
   align-items: center;
@@ -603,7 +610,8 @@ position: relative;
 }
 
 .jff{
-  height: 700px;
+  height: 500px;
+  width: 90%;
   object-fit: cover;
 }
   .rba {
@@ -636,7 +644,7 @@ position: relative;
   }
 
   .musra {
-    margin-bottom: -30px;
+    margin-bottom: 0px;
   }
   .rsvp_formy {
     gap: 10px;
@@ -663,7 +671,9 @@ position: relative;
   .rsvp_sub:nth-child(9) {
     grid-column: 1/5;
   }
-
+.musra{
+  margin-bottom: 0px;
+}
   .rsvp_sub:nth-child(10) {
     grid-column: 1/5;
   }
@@ -739,7 +749,11 @@ position: relative;
     font-size: 10px;
   }
   .tos {
-    font-size: 36px;
+    font-size: 46px;
+  }
+
+  .malka{
+    margin: -10px 0;
   }
   .year {
     font-size: 20px;

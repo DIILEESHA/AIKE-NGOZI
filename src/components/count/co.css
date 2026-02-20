@@ -76,10 +76,14 @@
   background-size: cover;
   background-position: center center;
   background-color: #1a1a1a; /* Dark elegant base */
+  background-color: #203c65a1;
+
   position: relative;
 }
 .count::after {
   background-color: #1a2b44b0;
+  background-color: #203c65a1;
+
   position: absolute;
   content: "";
   width: 100%;
