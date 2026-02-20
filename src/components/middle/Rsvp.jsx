@@ -5,8 +5,6 @@ import Select from "react-select";
 import countryList from "react-select-country-list";
 import Count from "../count/Count";
 import "react-toastify/dist/ReactToastify.css";
-import gomz from "../../assets/traingle.png";
-import sc from "../../assets/dm4.png"
 
 // Custom Select Styles (UPDATED ONLY REQUIRED PARTS)
 const customSelectStyles = {
@@ -46,11 +44,7 @@ const customSelectStyles = {
     fontSize: "16px",
   }),
 
-  // ✅ FIXED placeholder visibility
-  placeholder: (provided) => ({
-    ...provided,
-    color: "rgba(0,0,0,0.5)", // was white
-  }),
+ 
 
   // optional small improvement
   dropdownIndicator: (provided) => ({
