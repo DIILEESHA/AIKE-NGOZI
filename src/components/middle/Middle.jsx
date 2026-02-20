@@ -286,13 +286,13 @@ const Middle = () => {
           {/* RIGHT SIDE - Luxury Images */}
           <motion.div className="middle_sub kas">
             <div
-              className="img_card luxury_img"
+              className="img_card luxury_img ppp"
             >
               <div className="depths">
                 <motion.img 
                   src={susa} 
                   alt="Wedding Bliss" 
-                  className="inside_img"
+                  className="inside_img "
                   animate={{
                     filter: [
                       "brightness(1) contrast(1)",
@@ -306,7 +306,7 @@ const Middle = () => {
             </div>
 
             <div
-              className="img_card luxury_img ii"
+              className="img_card luxury_img ii kxx"
             >
               <div className="depths">
                 <motion.img 

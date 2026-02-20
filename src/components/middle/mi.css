@@ -588,7 +588,9 @@ position: relative;
   .tos {
     font-size: 36px;
   }
-
+.kxx{
+  display: none!important;
+}
 
   .jucy{
   display: flex;align-items: center;justify-content: center;
@@ -596,7 +598,9 @@ position: relative;
   width: 90%;
   height: 350px;
 }
-
+.ppp{
+  margin-bottom: -10px;
+}
 
 .jff{
   height: 700px;
