@@ -10,11 +10,11 @@ import scm from "../../assets/dm4.png"
 
 import Rsvp from "./Rsvp";
 const container = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0},
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.14,
       delayChildren: 0.3,
     },
   },
