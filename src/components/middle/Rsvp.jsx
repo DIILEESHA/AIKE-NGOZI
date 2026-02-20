@@ -88,13 +88,13 @@ const Rsvp = () => {
     let newErrors = {};
 
     // Required field validation
-    if (!formData.firstName) newErrors.firstName = "Required";
-    if (!formData.lastName) newErrors.lastName = "Required";
-    if (!formData.email) newErrors.email = "Required";
+    if (!formData.firstName) newErrors.firstName = "First Name is Required";
+    if (!formData.lastName) newErrors.lastName = "Last Name Required";
+    if (!formData.email) newErrors.email = "Email is Required";
     else if (!validateEmail(formData.email)) newErrors.email = "Invalid email";
-    if (!formData.streetAddress) newErrors.streetAddress = "Required";
-    if (!formData.city) newErrors.city = "Required";
-    if (!formData.country) newErrors.country = "Required";
+    if (!formData.streetAddress) newErrors.streetAddress = "Street address is Required";
+    if (!formData.city) newErrors.city = "City is Required";
+    if (!formData.country) newErrors.country = "Country is Required";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -150,7 +150,7 @@ const Rsvp = () => {
                           borderColor: errors[field.name] ? "red" : "#ccc",
                         }}
                       />
-                      {errors[field.name] && <span style={{ color: "red", fontSize: "14px" }}>{errors[field.name]}</span>}
+                      {errors[field.name] && <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>{errors[field.name]}</span>}
                     </div>
                   </motion.div>
                 ))}
@@ -187,7 +187,7 @@ const Rsvp = () => {
                       styles={customSelectStyles}
                       classNamePrefix="react-select"
                     />
-                    {errors.country && <span style={{ color: "red", fontSize: "14px" }}>{errors.country}</span>}
+                    {errors.country && <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>{errors.country}</span>}
                   </div>
                 </motion.div>
 
@@ -203,7 +203,7 @@ const Rsvp = () => {
 
               {/* Submission Message */}
               {submitted && (
-                <div style={{ marginTop: "20px", color: "#333", fontSize: "16px", fontWeight: 500 }}>
+                <div style={{ marginTop: "20px", color: "#fff", fontSize: "16px", fontWeight: 500 }}>
                   Thank you for sharing your address.
                 </div>
               )}

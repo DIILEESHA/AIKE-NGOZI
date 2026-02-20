@@ -1,4 +1,3 @@
-
 .middle {
   background-image: url("../../assets/beige.avif");
   width: 100%;
@@ -19,7 +18,11 @@
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   margin-bottom: -1px; /* Fixes the gap/notch issue */
 }
-
+.kuchiys {
+  font-family: "cinzel";
+  text-align: left;
+  margin-top: 5px;
+}
 /* If you still want the ::after for a specific effect (like a border or gradient) */
 .b::after {
   position: absolute;
@@ -520,7 +523,7 @@
   .costa {
     padding: 0;
   }
-  .rsvp_input::placeholder{
+  .rsvp_input::placeholder {
     font-size: 10px;
   }
   .tos {
