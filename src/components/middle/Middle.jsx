@@ -215,7 +215,7 @@ const Middle = () => {
                     </motion.h2>
                     <motion.h2 className="middle_couple_name">&</motion.h2>
                     <motion.h2 
-                      className="middle_couple_name tos" 
+                      className="middle_couple_name tos musra" 
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
