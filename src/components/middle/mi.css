@@ -11,7 +11,10 @@ position: relative;
   width: 90%;
   height: 200px;
 }
-
+.jkobss{
+  position: absolute;
+  inset: 0;
+}
   .jucy{
   display: flex;align-items: center;justify-content: center;
   margin: -150px auto -120px auto;
@@ -814,5 +817,28 @@ position: relative;
   .submit_btn {
     padding: 14px 20px;
     font-size: 11px;
+  }
+.jkob{
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+.jkobs{
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+}
+.jkobss{
+  position: absolute;
+  inset: 0;
+}
+  .kob_img{
+    object-fit: contain;
+    opacity: 90%;
+    height: 100%;
+  }
+
+  .middle{
+    padding: 15px;
   }
 }

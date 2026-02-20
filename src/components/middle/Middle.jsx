@@ -195,6 +195,11 @@ const Middle = () => {
 <div className="jkobs">
   <img src={scm} alt="" className="kob_img" />
 </div>
+
+
+<div className="jkobss">
+  <img src={scm} alt="" className="kob_img" />
+</div>
       <div className="miss">
 
 
