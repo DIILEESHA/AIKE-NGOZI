@@ -6,7 +6,7 @@ import countryList from "react-select-country-list";
 import Count from "../count/Count";
 import "react-toastify/dist/ReactToastify.css";
 
-// Custom Select Styles
+// Custom Select Styles (UPDATED ONLY REQUIRED PARTS)
 const customSelectStyles = {
   control: (provided, state) => ({
     ...provided,
@@ -18,27 +18,45 @@ const customSelectStyles = {
     borderColor: state.isFocused ? "#c6a972" : "rgba(255,255,255,0.4)",
     "&:hover": { borderColor: "#c6a972" },
   }),
+
+  // ✅ FIXED — was black
   menu: (provided) => ({
     ...provided,
-    backgroundColor: "#1a1a1a",
+    backgroundColor: "#fbf5e9",   // soft wedding ivory
     borderRadius: "0px",
     zIndex: 9999,
   }),
+
+  // ✅ FIXED text colors
   option: (provided, state) => ({
     ...provided,
     backgroundColor: state.isFocused ? "#c6a972" : "transparent",
-    color: state.isFocused ? "#000" : "#fff",
+    color: state.isFocused ? "#000" : "#333",  // was white
     cursor: "pointer",
   }),
+
+  // ✅ FIXED selected value color
   singleValue: (provided) => ({
     ...provided,
-    color: "#333",
+    color: "#333",  // visible now
     fontFamily: "Raleway",
     fontSize: "16px",
   }),
+
+  // ✅ FIXED placeholder visibility
   placeholder: (provided) => ({
     ...provided,
-    color: "rgba(255,255,255,0.6)",
+    color: "rgba(0,0,0,0.5)",  // was white
+  }),
+
+  // optional small improvement
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    color: "#c6a972",
+  }),
+
+  indicatorSeparator: () => ({
+    display: "none",
   }),
 };
 
@@ -81,10 +99,9 @@ const Rsvp = () => {
     if (!formData.lastName) newErrors.lastName = "Last Name is Required";
     if (!formData.email) newErrors.email = "Email is Required";
     else if (!validateEmail(formData.email))
-      newErrors.email = "Invalid email";
+      newErrors.email = "Invalid Email Address";
     if (!formData.streetAddress)
-      newErrors.streetAddress = "Street address is Required";
-    if (!formData.city) newErrors.city = "City is Required";
+      newErrors.streetAddress = "Street Address is Required";
     if (!formData.country) newErrors.country = "Country is Required";
 
     if (Object.keys(newErrors).length > 0) {
@@ -137,113 +154,203 @@ const Rsvp = () => {
               </h3>
 
               <form className="rsvp_formy" onSubmit={handleSubmit}>
-                {[
-                  { label: "FIRST NAME *", name: "firstName" },
-                  { label: "LAST NAME *", name: "lastName" },
-                  { label: "EMAIL ADDRESS *", name: "email" },
-                  {
-                    label: "STREET ADDRESS (LINE 1) *",
-                    name: "streetAddress",
-                  },
-                  { label: "CITY *", name: "city" },
-                ].map((field, index) => (
-                  <div className="rsvp_sub" key={index}>
-                    <div className="rsvp_input_area">
-                      <label className="rsvp_label">
-                        {field.label}
-                      </label>
-                      <input
-                        type="text"
-                        name={field.name}
-                        value={formData[field.name]}
-                        placeholder={field.label}
-                        className="rsvp_input"
-                        onChange={handleChange}
-                        style={{
-                          fontSize: "18px",
-                          borderColor: errors[field.name]
-                            ? "red"
-                            : "#ccc",
-                        }}
-                      />
-                      {errors[field.name] && (
-                        <span
-                          style={{
-                            color: "red",
-                            fontSize: "14px",
-                          }}
-                        >
-                          {errors[field.name]}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
 
-                {[
-                  {
-                    label: "ADDRESS LINE 2 (Apt/Suite)",
-                    name: "addressLine2",
-                  },
-                  { label: "STATE / PROVINCE", name: "state" },
-                  { label: "POSTAL / ZIP CODE", name: "zip" },
-                ].map((field, index) => (
-                  <div className="rsvp_sub" key={index}>
-                    <div className="rsvp_input_area">
-                      <label className="rsvp_label">
-                        {field.label}
-                      </label>
-                      <input
-                        type="text"
-                        name={field.name}
-                        value={formData[field.name]}
-                        placeholder={field.label}
-                        className="rsvp_input"
-                        onChange={handleChange}
-                        style={{ fontSize: "18px" }}
-                      />
-                    </div>
+                {/* FIRST NAME */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">FIRST NAME *</label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      placeholder="Enter Your First Name"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                      style={{
+                        borderColor: errors.firstName ? "red" : "#ccc",
+                      }}
+                    />
+                    {errors.firstName && (
+                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        {errors.firstName}
+                      </span>
+                    )}
                   </div>
-                ))}
+                </div>
 
+                {/* LAST NAME */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">LAST NAME *</label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      placeholder="Enter Your Last Name"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                      style={{
+                        borderColor: errors.lastName ? "red" : "#ccc",
+                      }}
+                    />
+                    {errors.lastName && (
+                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        {errors.lastName}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* EMAIL */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">EMAIL ADDRESS *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      placeholder="Enter Your Email Address"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                      style={{
+                        borderColor: errors.email ? "red" : "#ccc",
+                      }}
+                    />
+                    {errors.email && (
+                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        {errors.email}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* STREET ADDRESS */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
                     <label className="rsvp_label">
-                      COUNTRY *
+                      STREET ADDRESS (LINE 1) *
                     </label>
+                    <input
+                      type="text"
+                      name="streetAddress"
+                      value={formData.streetAddress}
+                      placeholder="Enter Your Street Address"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                      style={{
+                        borderColor: errors.streetAddress ? "red" : "#ccc",
+                      }}
+                    />
+                    {errors.streetAddress && (
+                      <span  className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        {errors.streetAddress}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* ADDRESS LINE 2 */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">
+                      ADDRESS LINE 2 (APT/SUITE)
+                    </label>
+                    <input
+                      type="text"
+                      name="addressLine2"
+                      value={formData.addressLine2}
+                      placeholder="Apartment, Suite, Unit, etc. (Optional)"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+
+                {/* CITY */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">CITY *</label>
+                    <input
+                      type="text"
+                      name="city"
+                      value={formData.city}
+                      placeholder="Enter Your City"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                      style={{
+                        borderColor: errors.city ? "red" : "#ccc",
+                      }}
+                    />
+                    {errors.city && (
+                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        {errors.city}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* STATE */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">STATE </label>
+                    <input
+                      type="text"
+                      name="state"
+                      value={formData.state}
+                      placeholder="Enter Your State or Province"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+
+                {/* ZIP */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">
+                      ZIP CODE
+                    </label>
+                    <input
+                      type="text"
+                      name="zip"
+                      value={formData.zip}
+                      placeholder="Enter Your Postal or Zip Code"
+                      className="rsvp_input"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+
+                {/* COUNTRY */}
+                <div className="rsvp_sub">
+                  <div className="rsvp_input_area">
+                    <label className="rsvp_label">COUNTRY *</label>
                     <Select
                       options={options}
                       value={options.find(
-                        (option) =>
-                          option.label === formData.country
+                        (option) => option.label === formData.country
                       )}
                       onChange={handleCountryChange}
-                      placeholder="Select Country"
+                      placeholder="Select Your Country"
                       styles={customSelectStyles}
                     />
                     {errors.country && (
-                      <span
-                        style={{
-                          color: "red",
-                          fontSize: "14px",
-                        }}
-                      >
+                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
                         {errors.country}
                       </span>
                     )}
                   </div>
                 </div>
 
+                {/* SUBMIT */}
                 <div className="rsvp_sub">
                   <div className="gops">
-                    <button
-                      type="submit"
-                      className="submit_btn luxury_btn"
-                    >
+                    <button type="submit" className="submit_btn luxury_btn">
                       SUBMIT ADDRESS
                     </button>
                   </div>
                 </div>
+
               </form>
 
               {submitted && (
