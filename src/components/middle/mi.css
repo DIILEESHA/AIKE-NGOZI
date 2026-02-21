@@ -418,14 +418,14 @@
 /* RSVP Form */
 .rsvp_area {
   padding: 0 80px 80px 80px;
-  max-width: 890px;
+  max-width: 900px;
   margin: 0px auto;
 }
 
 .rsvp_formy {
   display: grid;
   margin-top: 50px;
-  padding: 0 40px;
+  padding: 0 50px;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   /* row-gap: 30px; */
@@ -436,24 +436,24 @@
 }
 
 .rsvp_sub:nth-child(5) {
-  grid-column: 1/3;
+  grid-column: 1/5;
 }
 
 .rsvp_sub:nth-child(7) {
-  grid-column: 1/3;
+  grid-column: 3/5;
 }
 .rsvp_sub:nth-child(2) {
   grid-column: 3/5;
 }
 
 .rsvp_sub:nth-child(6) {
-  grid-column: 3/5;
+  grid-column: 1/3;
 }
 .rsvp_sub:nth-child(8) {
-  grid-column: 3/5;
+  grid-column: 1/2;
 }
 .rsvp_sub:nth-child(9) {
-  grid-column: 1/5;
+  grid-column: 2/5;
 }
 
 .rsvp_sub:nth-child(10) {
@@ -534,7 +534,7 @@
 .rsvp_title {
   /* font-weight: bold; */
   text-transform: capitalize;
-  font-size: 28px;
+  font-size: 40px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -549,7 +549,7 @@
   width: 100%;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   font-family: "Playfair Display", serif;
-  font-family: "cinzel";
+  font-family: "great";
   font-weight: bolder;
   /* font-family: "raleway", serif; */
 }
@@ -921,11 +921,13 @@
   }
 
   .rsvp_title {
-    font-size: 18px!important;
-    line-height: 130%;
+    font-size: 22px!important;
+    line-height: 140%;
+    margin-bottom: -10px;
   }
   .rsvp_sm_title {
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: -10px;
   }
  .tf_img {
     width: 200px;
