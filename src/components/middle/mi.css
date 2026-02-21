@@ -1,22 +1,26 @@
 .middle {
   overflow: hidden;
-position: relative;
+  position: relative;
   background-image: url("../../assets/beige.avif");
   width: 100%;
 }
 
-.jucy{
-  display: flex;align-items: center;justify-content: center;
+.jucy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: -50px auto;
   width: 90%;
   height: 200px;
 }
-.jkobss{
+.jkobss {
   position: absolute;
   inset: 0;
 }
-  .jucy{
-  display: flex;align-items: center;justify-content: center;
+.jucy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: -150px auto -120px auto;
   width: 90%;
   z-index: 1;
@@ -51,7 +55,6 @@ position: relative;
   /* animation: gentle-breathe 6s ease-in-out infinite; */
 }
 
-
 .gpo {
   margin-bottom: 30px;
 }
@@ -60,6 +63,29 @@ position: relative;
 }
 .rba {
   font-size: 40px;
+  /* font-weight: bold;  */
+  font-weight: 500;
+  text-transform: capitalize;
+  /* line-height: 100%; */
+  font-size: 60px;
+  background: linear-gradient(
+    to bottom,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5e9 75%,
+    #aa771c 100%
+  );
+  -webkit-background-clip: text;
+  font-family: "dancing";
+  font-family: "bik";
+  /* font-family: 'great'; */
+
+  /* background-clip: text; */
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 .kuchiys {
   font-family: "raleway";
@@ -259,10 +285,9 @@ position: relative;
     #aa771c 100%
   );
   -webkit-background-clip: text;
-  font-family: 'dancing';
-  font-family: 'bik';
+  font-family: "dancing";
+  font-family: "bik";
   /* font-family: 'great'; */
-
 
   /* background-clip: text; */
   -webkit-text-fill-color: transparent;
@@ -271,13 +296,13 @@ position: relative;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
 }
 
-.pal{
+.pal {
   margin-bottom: -20px;
 }
-.rba{
+.rba {
   margin-bottom: -40px;
 }
-.musra{
+.musra {
   /* margin-bottom: 40px; */
 }
 .year {
@@ -294,7 +319,7 @@ position: relative;
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'bik';
+  font-family: "bik";
 
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   /* font-family: "Cinzel", serif; */
@@ -360,10 +385,9 @@ position: relative;
   height: 50vh;
   width: 100%;
   object-fit: cover;
+  object-position: center 40%;
   position: relative;
   z-index: 1;
-  background-size: cover;
-  background-position: center;
 }
 
 /* RSVP Form */
@@ -529,11 +553,11 @@ position: relative;
   }
 
   .tos {
-    font-size: 42px;
+    font-size: 102px;
   }
 
   .year {
-    font-size: 32px;
+    font-size: 82px;
   }
 
   .yearma {
@@ -559,7 +583,7 @@ position: relative;
   }
 
   .inside_img {
-    height: 45vh;
+    height: 55vh;
   }
 
   .rsvp_area {
@@ -611,38 +635,41 @@ position: relative;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
   .tos {
-    font-size: 36px;
+    font-size: 126px;
   }
-.kxx{
-  display: none!important;
-}
+  .kxx {
+    display: none !important;
+  }
 
-  .jucy{
-  display: flex;align-items: center;justify-content: center;
-  margin: -150px auto -120px auto;
-  width: 90%;
-  height: 350px;
-}
-.ppp{
-  margin-bottom: -10px;
-}
+  .jucy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -150px auto -120px auto;
+    width: 90%;
+    height: 350px;
+  }
+  .ppp {
+    margin-bottom: -10px;
+  }
 
-.jff{
-  height: 500px;
-  width: 90%;
-  object-fit: cover;
-}
+  .jff {
+    height: 500px;
+    width: 90%;
+    object-fit: cover;
+  }
   .rba {
-    font-size: 25px;
+    font-size: 55px;
+    margin-bottom: -30px;
   }
   .year {
-    font-size: 26px;
+    font-size: 76px;
   }
   .yearma {
     font-size: 20px;
   }
   .inside_img {
-    height: 40vh;
+    height: 55vh;
   }
 
   .luxury_card {
@@ -656,9 +683,9 @@ position: relative;
   }
 
   .tf_img {
-    width: 200px;
-    margin-top: -40px;
-    margin-bottom: -20px;
+    width: 350px;
+    margin-top: -80px;
+    margin-bottom: -50px;
   }
 
   .musra {
@@ -689,9 +716,9 @@ position: relative;
   .rsvp_sub:nth-child(9) {
     grid-column: 1/5;
   }
-.musra{
-  margin-bottom: 0px;
-}
+  .musra {
+    margin-bottom: 0px;
+  }
   .rsvp_sub:nth-child(10) {
     grid-column: 1/5;
   }
@@ -715,11 +742,11 @@ position: relative;
   }
 
   .tos {
-    font-size: 80px;
+    font-size: 100px;
   }
 
   .year {
-    font-size: 22px;
+    font-size: 52px;
   }
   .go {
     gap: 10px;
@@ -732,7 +759,17 @@ position: relative;
     width: 100%;
     font-size: 22px;
   }
+  .inside_img {
+    height: 40vh;
+  }
 
+
+
+   .tf_img {
+    width: 300px;
+    margin-top: -20px;
+    margin-bottom: -50px;
+  }
   .kas {
     /* margin: 200px 0; */
     gap: 10px;
@@ -767,15 +804,23 @@ position: relative;
     font-size: 10px;
   }
   .tos {
-    font-size: 70px;
+    font-size: 90px;
   }
-.pal,.musra,.rba{
-  margin-bottom: -19px;
-}
-.musra{
-  margin-top: 0;
-}
-  .malka{
+
+
+
+  .rba{
+    font-size: 30px;
+  }
+  .pal,
+  .musra,
+  .rba {
+    margin-bottom: -19px;
+  }
+  .musra {
+    margin-top: 0;
+  }
+  .malka {
     margin: -10px 0;
   }
   .year {
@@ -793,7 +838,7 @@ position: relative;
     margin: -50px auto;
   }
   .inside_img {
-    height: 45vh;
+    height: 40vh;
   }
 
   .rsvp_title {
@@ -803,7 +848,11 @@ position: relative;
   .rsvp_sm_title {
     font-size: 16px;
   }
-
+ .tf_img {
+    width: 220px;
+    margin-top: -40px;
+    margin-bottom: -40px;
+  }
   .rsvp_p {
     font-size: 12px !important;
   }
@@ -821,27 +870,27 @@ position: relative;
     padding: 14px 20px;
     font-size: 11px;
   }
-.jkob{
-  position: absolute;
-  top: -100px;
-  left: -100px;
-}
-.jkobs{
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-}
-.jkobss{
-  position: absolute;
-  inset: 0;
-}
-  .kob_img{
+  .jkob {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+  }
+  .jkobs {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+  }
+  .jkobss {
+    position: absolute;
+    inset: 0;
+  }
+  .kob_img {
     object-fit: contain;
     opacity: 75%;
     height: 100%;
   }
 
-  .middle{
+  .middle {
     padding: 15px;
   }
 }

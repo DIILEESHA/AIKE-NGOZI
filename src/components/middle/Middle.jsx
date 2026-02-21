@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import start from "../../assets/stars.png";
 import susa from "../../assets/th.jpg";
 import susat from "../../assets/tw.jpg";
-import tura from "../../assets/25.png"
-import sc from "../../assets/ds3.PNG"
-import scm from "../../assets/dm4.PNG"
+import tura from "../../assets/25.png";
+import sc from "../../assets/ds3.PNG";
+import scm from "../../assets/dm4.PNG";
 
 import Rsvp from "./Rsvp";
 const container = {
-  hidden: { opacity: 0},
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
@@ -187,25 +187,19 @@ const Middle = () => {
 
   return (
     <div className="middle luxury_section">
-<div className="jkob">
-  <img src={sc} alt="" className="kob_img" />
-</div>
+      <div className="jkob">
+        <img src={sc} alt="" className="kob_img" />
+      </div>
 
+      <div className="jkobs">
+        <img src={scm} alt="" className="kob_img" />
+      </div>
 
-<div className="jkobs">
-  <img src={scm} alt="" className="kob_img" />
-</div>
-
-
-<div className="jkobss">
-  <img src={scm} alt="" className="kob_img" />
-</div>
+      <div className="jkobss">
+        <img src={scm} alt="" className="kob_img" />
+      </div>
       <div className="miss">
-
-
-
-
-        <motion.div 
+        <motion.div
           className="middle_grid"
           variants={container}
           initial="hidden"
@@ -215,28 +209,28 @@ const Middle = () => {
           {/* LEFT SIDE - Wedding Cards */}
           <motion.div className="middle_sub go kami">
             {/* Couple Name Card */}
-            <motion.div 
-              className="middle_card luxury_card" 
+            <motion.div
+              className="middle_card luxury_card"
               variants={luxuryCardReveal}
-              whileHover={{ 
-                y: -10, 
+              whileHover={{
+                y: -10,
                 rotateX: -2,
-                boxShadow: "0 35px 60px rgba(0,0,0,0.25)"
+                boxShadow: "0 35px 60px rgba(0,0,0,0.25)",
               }}
             >
               <div className="dosh">
                 <div className="depth">
                   <motion.div className="names_container">
-                    <motion.h2 
-                      className="middle_couple_name tos pal"  
+                    <motion.h2
+                      className="middle_couple_name tos pal"
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
                       Aike
                     </motion.h2>
                     <motion.h2 className="middle_couple_name rba">&</motion.h2>
-                    <motion.h2 
-                      className="middle_couple_name tos musra" 
+                    <motion.h2
+                      className="middle_couple_name tos musra"
                       variants={nameReveal}
                       whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
@@ -245,30 +239,33 @@ const Middle = () => {
                   </motion.div>
 
                   <motion.div className="line" variants={starFloat}>
-                    <motion.img 
-                      src={start} 
-                      alt="Love Star" 
+                    <motion.img
+                      src={start}
+                      alt="Love Star"
                       className="star_img"
-                      animate={{ 
+                      animate={{
                         rotate: [360, 360],
                         scale: [1, 1.05, 1],
                       }}
-                      transition={{ 
-                        rotate: { duration: 12, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 4, repeat: Infinity }
+                      transition={{
+                        rotate: {
+                          duration: 12,
+                          repeat: Infinity,
+                          ease: "linear",
+                        },
+                        scale: { duration: 4, repeat: Infinity },
                       }}
                     />
                   </motion.div>
 
                   {/* <motion.h2 className="year" variants={dateReveal}> */}
-                    {/* 25 Years */}
+                  {/* 25 Years */}
                   {/* </motion.h2> */}
-<div className="kol">
-
-                  <img src={tura} alt="" className="tf_img" />
-</div>
-                  <motion.h2 
-                    className="yearma" 
+                  <div className="kol">
+                    <img src={tura} alt="" className="tf_img" />
+                  </div>
+                  <motion.h2
+                    className="yearma"
                     variants={locationGlow}
                     animate={{
                       textShadow: [
@@ -284,19 +281,15 @@ const Middle = () => {
                 </div>
               </div>
             </motion.div>
-
-         
           </motion.div>
 
           {/* RIGHT SIDE - Luxury Images */}
           <motion.div className="middle_sub kas">
-            <div
-              className="img_card luxury_img ppp"
-            >
+            <div className="img_card luxury_img ppp">
               <div className="depths">
-                <motion.img 
-                  src={susa} 
-                  alt="Wedding Bliss" 
+                <motion.img
+                  src={susa}
+                  alt="Wedding Bliss"
                   className="inside_img "
                   animate={{
                     filter: [
@@ -310,37 +303,29 @@ const Middle = () => {
               </div>
             </div>
 
-            <div
-              className="img_card luxury_img ii kxx"
-            >
+            <div className="img_card luxury_img ii kxx">
               <div className="depths">
-                <motion.img 
-                  src={susat} 
-                  alt="Love Eternal" 
+                <motion.img
+                  src={susat}
+                  alt="Love Eternal"
                   className="inside_img"
-                  
                 />
               </div>
             </div>
           </motion.div>
 
-
-
-
-            <motion.div className="middle_sub go kami">
-         
-
+          <motion.div className="middle_sub go kami">
             {/* Date & Location Card */}
-            <motion.div 
-              className="middle_card luxury_card" 
+            <motion.div
+              className="middle_card luxury_card"
               variants={luxuryCardReveal}
-              whileHover={{ 
-                y: -10, 
+              whileHover={{
+                y: -10,
                 rotateX: -2,
-                boxShadow: "0 35px 60px rgba(0,0,0,0.25)"
+                boxShadow: "0 35px 60px rgba(0,0,0,0.25)",
               }}
             >
-              <motion.div 
+              <motion.div
                 className="dosh"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -352,25 +337,26 @@ const Middle = () => {
                   </motion.h2>
 
                   <motion.div className="line malka" variants={starFloat}>
-                    <motion.img 
-                      src={start} 
-                      alt="Event Star" 
+                    <motion.img
+                      src={start}
+                      alt="Event Star"
                       className="star_img"
-                      animate={{ 
+                      animate={{
                         rotate: [360, 360],
                         scale: [1, 1.05, 1],
                       }}
-                      transition={{ 
-                        rotate: { duration: 14, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 5, repeat: Infinity }
+                      transition={{
+                        rotate: {
+                          duration: 14,
+                          repeat: Infinity,
+                          ease: "linear",
+                        },
+                        scale: { duration: 5, repeat: Infinity },
                       }}
                     />
                   </motion.div>
 
-                  <motion.h2 
-                    className="yearma" 
-                    variants={locationGlow}
-                  >
+                  <motion.h2 className="yearma" variants={locationGlow}>
                     Charlotte, NC
                   </motion.h2>
                 </div>
@@ -379,13 +365,10 @@ const Middle = () => {
           </motion.div>
         </motion.div>
       </div>
-      <Rsvp/>
+      <Rsvp />
       <div className="jucy">
-
-      <img className="jff" src={start} alt="" />
+        <img className="jff" src={start} alt="" />
       </div>
-
-
     </div>
   );
 };

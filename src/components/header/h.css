@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(4, 4, 72, 0.467); /* dark overlay for contrast */
-  background-color: #1a1a1a84;
+  background-color: #1a1a1a94;
 
   inset: 0;
   z-index: 0;
@@ -39,36 +39,41 @@
 
 .couple_name {
   font-family: "Cinzel", serif;
-  font-family: 'dancing';
-  font-family: 'bik';
+  font-size: 80px; /* Slightly reduced for better fit */
+  font-weight: 700; /* Bolder weight helps the gold gradient show better */
+  letter-spacing: 15px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-align: center;
 
-  font-size: 200px;
-  font-weight: 400;
-letter-spacing: 20.5px;
-  /* Gold gradient */
+  /* High-end Metallic Gold Gradient */
   background: linear-gradient(
-    135deg,
-    #b83c0b,
-    #ffd700,
-    #fff8dc,
-    #ffd700,
-    #b8860b
+    to bottom,
+    #cfaf6c 0%,    /* Top light gold */
+    #715321 22%,   /* Mid shadow */
+    #f8e9ad 45%,   /* Bright highlight */
+    #b38728 50%,   /* The "fold" or chisel line */
+    #af8b44 70%,   /* Bottom gold */
+    #63431a 100%   /* Deep bottom shadow */
   );
+
+  background-size: 100% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  /* Shine / shadow effect for premium look */
-  text-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.3),
-    0 0 8px rgba(255, 215, 0, 0.6);
-  line-height: 1.1;
+  /* Sophisticated depth shadows */
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.5));
+  
+  /* Optional: subtle border to define letters against the background */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.2);
 }
 
 .ui {
   font-family: "Dancing Script", cursive;
-  font-family: 'bik';
-
-  font-size: 85px;
+  font-family: 'great';
+margin-top: 20px;
+text-transform: capitalize;
+  font-size: 55px;
   font-style: italic;
   color: #fff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -76,23 +81,15 @@ letter-spacing: 20.5px;
 
 /* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
 
-/* Tablets / small laptops 1024px */
-@media (max-width: 1024px) {
-  .couple_name {
-    font-size: 50px;
-  }
-  .ui {
-    font-size: 20px;
-  }
-}
+
 
 /* Tablets 768px */
-@media (max-width: 768px) {
+@media (max-width: 1068px) {
   .couple_name {
-    font-size: 80px;
+    font-size: 70px;
   }
   .ui {
-    font-size: 18px;
+    font-size: 48px;
   }
   .headrer_couple_name_section {
     gap: 15px;
@@ -100,14 +97,43 @@ letter-spacing: 20.5px;
 }
 
 /* Mobile 480px */
-@media (max-width: 480px) {
+@media (max-width: 680px) {
   .couple_name {
-    font-size: 70px;
+    font-size: 50px;
 letter-spacing: 4.5px;
 
   }
+
+
+
+  .header_container{
+    height: 60vh;
+  }
   .ui {
     font-size: 46px;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+  .headrer_couple_name_section {
+    gap: 10px;
+  }
+}
+
+/* Mobile 480px */
+@media (max-width: 480px) {
+  .couple_name {
+    font-size: 40px;
+letter-spacing: 4.5px;
+
+  }
+
+
+
+  .header_container{
+    height: 70vh;
+  }
+  .ui {
+    font-size: 26px;
     margin-top: 10px;
     text-transform: capitalize;
   }
