@@ -349,7 +349,7 @@ const Rsvp = () => {
                 {/* ZIP */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
-                    <label className="rsvp_label">ZIP CODE</label>
+                    <label className="rsvp_label">ZIP </label>
                     <input
                       type="text"
                       name="zip"
