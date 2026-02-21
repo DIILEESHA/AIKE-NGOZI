@@ -7,7 +7,7 @@ const Header = () => {
         <div className="headrer_couple_name_section">
           <h2 className="couple_name">Save </h2>
           <h2 className="couple_name ui">The </h2>
-          <h2 className="couple_name"> Date</h2>
+          <h2 className="couple_name"> Dates</h2>
         </div>
       </div>
     </div>
