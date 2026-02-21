@@ -298,7 +298,7 @@
   filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
   
   /* Optional: Adds a subtle shine/stroke to help it pop */
-  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 0.5px rgba(109, 59, 13, 0.4);
 }
 
 .pal {
@@ -417,15 +417,15 @@
 
 /* RSVP Form */
 .rsvp_area {
-  padding: 0 40px 80px 40px;
-  max-width: 830px;
+  padding: 0 80px 80px 80px;
+  max-width: 890px;
   margin: 0px auto;
 }
 
 .rsvp_formy {
   display: grid;
   margin-top: 50px;
-  /* padding: 0 40px; */
+  padding: 0 40px;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   /* row-gap: 30px; */
@@ -526,7 +526,7 @@
   font-family: "Cinzel", serif;
 
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 18px;
 }
 .rsvp_sm_title {
   font-size: 25px;
@@ -534,7 +534,7 @@
 .rsvp_title {
   /* font-weight: bold; */
   text-transform: capitalize;
-  font-size: 35px;
+  font-size: 28px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -556,7 +556,7 @@
 
 /* Submit Button Luxury Gold */
 .submit_btn {
-  padding: 28px 55px;
+  padding: 18px 35px;
   border-radius: 0px;
   border: none;
   cursor: pointer;

@@ -38,12 +38,13 @@
 }
 
 .couple_name {
-  font-family: "Cinzel", serif;
-  font-size: 80px; /* Slightly reduced for better fit */
-  font-weight: 700; /* Bolder weight helps the gold gradient show better */
+  font-family: "bik", serif;
+  font-size: 200px; /* Slightly reduced for better fit */
+  font-weight: 400!important; /* Bolder weight helps the gold gradient show better */
   letter-spacing: 10px;
+  padding: 0 10px;
   line-height: 0.9;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align: center;
 
   /* High-end Metallic Gold Gradient */
@@ -105,8 +106,9 @@
   font-family: "bik";
   text-transform: lowercase;
   margin: 20px -10px;
-  margin-top: 40px;
+  margin-top: 50px;
   font-weight: 400;
+  font-size: 100px!important;
 }
 
 /* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
@@ -129,7 +131,7 @@
 /* Mobile 480px */
 @media (max-width: 680px) {
   .couple_name {
-    font-size: 50px;
+    font-size: 90px;
 letter-spacing: 4.5px;
 
   }
@@ -152,7 +154,7 @@ letter-spacing: 4.5px;
 /* Mobile 480px */
 @media (max-width: 670px) {
   .couple_name {
-    font-size: 38px;
+    font-size: 108px;
 letter-spacing: 4.5px;
 
   }
@@ -163,9 +165,34 @@ letter-spacing: 4.5px;
     height: 60vh;
   }
   .ui {
-    font-size: 36px;
+    font-size: 66px!important;
     margin: 0;
     margin-top: 5px;
+    padding: 0;
+    text-transform: capitalize;
+  }
+  .headrer_couple_name_section {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 470px) {
+  .couple_name {
+    font-size: 58px!important;
+letter-spacing: 4.5px;
+
+  }
+
+
+
+  .header_container{
+    height: 70vh;
+  }
+  .ui {
+    font-size: 36px!important;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
     text-transform: capitalize;
   }
   .headrer_couple_name_section {
