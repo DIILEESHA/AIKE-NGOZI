@@ -10,14 +10,12 @@ const FIELD_LIMITS = {
   firstName: 10,
   lastName: 10,
   email: 50,
-  streetAddress: 100,
-  addressLine2: 100,
-  city: 50,
-  state: 50,
+  streetAddress: 60,
+  addressLine2: 60,
+  city: 20,
+  state: 30,
   zip: 20,
 };
-
-
 
 // Custom Select Styles (UPDATED ONLY REQUIRED PARTS)
 const customSelectStyles = {
@@ -29,9 +27,7 @@ const customSelectStyles = {
     borderRadius: "0px",
     padding: "6px 10px",
     boxShadow: state.isFocused ? "0 0 0 1px #c6a972" : "none",
-    borderColor: state.isFocused
-      ? "#c6a972"
-      : "rgba(255,255,255,0.4)",
+    borderColor: state.isFocused ? "#c6a972" : "rgba(255,255,255,0.4)",
     "&:hover": {
       borderColor: "#c6a972",
     },
@@ -48,9 +44,7 @@ const customSelectStyles = {
   // Dropdown options
   option: (provided, state) => ({
     ...provided,
-    backgroundColor: state.isFocused
-      ? "#c6a972"
-      : "transparent",
+    backgroundColor: state.isFocused ? "#c6a972" : "transparent",
     color: state.isFocused ? "#000" : "#333",
     cursor: "pointer",
   }),
@@ -84,10 +78,7 @@ const customSelectStyles = {
   }),
 };
 
-
 // (your customSelectStyles unchanged)
-
-
 
 const Rsvp = () => {
   const options = useMemo(() => countryList().getData(), []);
@@ -122,8 +113,7 @@ const Rsvp = () => {
     setErrors({ ...errors, country: "" });
   };
 
-  const validateEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -136,10 +126,8 @@ const Rsvp = () => {
       newErrors.email = "Invalid Email Address";
     if (!formData.streetAddress)
       newErrors.streetAddress = "Street Address is Required";
-    if (!formData.city)
-      newErrors.city = "City is Required";
-    if (!formData.country)
-      newErrors.country = "Country is Required";
+    if (!formData.city) newErrors.city = "City is Required";
+    if (!formData.country) newErrors.country = "Country is Required";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -184,12 +172,9 @@ const Rsvp = () => {
             <div className="depth">
               <h2 className="rsvp_sm_title">WITH GRATITUDE</h2>
               <h1 className="rsvp_title">Please Share Your Mailing Address</h1>
-              <h3 className="rsvp_p">
-                So we may send your formal invitation
-              </h3>
+              <h3 className="rsvp_p">So we may send your formal invitation</h3>
 
               <form className="rsvp_formy" onSubmit={handleSubmit}>
-                
                 {/* FIRST NAME */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
@@ -206,13 +191,24 @@ const Rsvp = () => {
                         borderColor: errors.firstName ? "red" : "#ccc",
                       }}
                     />
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
                       {errors.firstName && (
-                        <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        <span
+                          className="kuchiys"
+                          style={{ color: "red", fontSize: "14px" }}
+                        >
                           {errors.firstName}
                         </span>
                       )}
-                      <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ fontSize: "12px", color: "#fff" }}
+                      >
                         {formData.firstName.length}/{FIELD_LIMITS.firstName}
                       </span>
                     </div>
@@ -235,13 +231,24 @@ const Rsvp = () => {
                         borderColor: errors.lastName ? "red" : "#ccc",
                       }}
                     />
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
                       {errors.lastName && (
-                        <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        <span
+                          className="kuchiys"
+                          style={{ color: "red", fontSize: "14px" }}
+                        >
                           {errors.lastName}
                         </span>
                       )}
-                      <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ fontSize: "12px", color: "#fff" }}
+                      >
                         {formData.lastName.length}/{FIELD_LIMITS.lastName}
                       </span>
                     </div>
@@ -264,13 +271,24 @@ const Rsvp = () => {
                         borderColor: errors.email ? "red" : "#ccc",
                       }}
                     />
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
                       {errors.email && (
-                        <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        <span
+                          className="kuchiys"
+                          style={{ color: "red", fontSize: "14px" }}
+                        >
                           {errors.email}
                         </span>
                       )}
-                      <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ fontSize: "12px", color: "#fff" }}
+                      >
                         {formData.email.length}/{FIELD_LIMITS.email}
                       </span>
                     </div>
@@ -293,14 +311,26 @@ const Rsvp = () => {
                         borderColor: errors.streetAddress ? "red" : "#ccc",
                       }}
                     />
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
                       {errors.streetAddress && (
-                        <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        <span
+                          className="kuchiys"
+                          style={{ color: "red", fontSize: "14px" }}
+                        >
                           {errors.streetAddress}
                         </span>
                       )}
-                      <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
-                        {formData.streetAddress.length}/{FIELD_LIMITS.streetAddress}
+                      <span
+                        className="kuchiys"
+                        style={{ fontSize: "12px", color: "#fff" }}
+                      >
+                        {formData.streetAddress.length}/
+                        {FIELD_LIMITS.streetAddress}
                       </span>
                     </div>
                   </div>
@@ -319,7 +349,10 @@ const Rsvp = () => {
                       className="rsvp_input"
                       onChange={handleChange}
                     />
-                    <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                    <span
+                      className="kuchiys"
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    >
                       {formData.addressLine2.length}/{FIELD_LIMITS.addressLine2}
                     </span>
                   </div>
@@ -341,13 +374,24 @@ const Rsvp = () => {
                         borderColor: errors.city ? "red" : "#ccc",
                       }}
                     />
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
                       {errors.city && (
-                        <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                        <span
+                          className="kuchiys"
+                          style={{ color: "red", fontSize: "14px" }}
+                        >
                           {errors.city}
                         </span>
                       )}
-                      <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ fontSize: "12px", color: "#fff" }}
+                      >
                         {formData.city.length}/{FIELD_LIMITS.city}
                       </span>
                     </div>
@@ -367,7 +411,10 @@ const Rsvp = () => {
                       className="rsvp_input"
                       onChange={handleChange}
                     />
-                    <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                    <span
+                      className="kuchiys"
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    >
                       {formData.state.length}/{FIELD_LIMITS.state}
                     </span>
                   </div>
@@ -386,7 +433,10 @@ const Rsvp = () => {
                       className="rsvp_input"
                       onChange={handleChange}
                     />
-                    <span className="kuchiys" style={{ fontSize: "12px", color: "#fff" }}>
+                    <span
+                      className="kuchiys"
+                      style={{ fontSize: "12px", color: "#fff" }}
+                    >
                       {formData.zip.length}/{FIELD_LIMITS.zip}
                     </span>
                   </div>
@@ -399,14 +449,17 @@ const Rsvp = () => {
                     <Select
                       options={options}
                       value={options.find(
-                        (option) => option.label === formData.country
+                        (option) => option.label === formData.country,
                       )}
                       onChange={handleCountryChange}
                       placeholder=" Country"
                       styles={customSelectStyles}
                     />
                     {errors.country && (
-                      <span className="kuchiys" style={{ color: "red", fontSize: "14px" }}>
+                      <span
+                        className="kuchiys"
+                        style={{ color: "red", fontSize: "14px" }}
+                      >
                         {errors.country}
                       </span>
                     )}
@@ -420,7 +473,6 @@ const Rsvp = () => {
                     </button>
                   </div>
                 </div>
-
               </form>
 
               {submitted && (
