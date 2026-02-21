@@ -56,6 +56,47 @@
   font-size: 60px;
 }
 
+
+.count_day{
+  font-weight: 400;
+  font-size: 100px!important;
+  text-align: center;
+  margin: 0px 0;
+  margin-top: -60px;
+  font-family: "bik";
+margin-bottom: -20px;
+  /* The Metallic Gold Gradient */
+  background: linear-gradient(
+    to bottom,
+    #fcf6ba 0%,    /* Light highlight */
+    #bf953f 25%,   /* Base gold */
+    #fbf5b7 50%,   /* Mid highlight */
+    #aa771c 75%,   /* Deep shadow gold */
+    #916109 100%   /* Darker edge */
+  );
+  
+  /* Clipping the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* The 3D Shadow Effect */
+  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
+  
+  /* Optional: Adds a subtle shine/stroke to help it pop */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
+}
+
+
+.count_value{
+  margin-bottom: -30px;
+  font-size: 15px!important;
+}
+.frt{
+  margin-top: -40px;
+  font-weight: bold;
+  font-size: 50px!important;
+}
 .pagal {
   width: 500px !important;
 }
@@ -156,17 +197,18 @@
 }
 
 /* Mobile (480px and below) */
-@media (max-width: 500px) {
+@media (max-width: 580px) {
 .count_day{
   font-family: "bik"!important;
-  font-size: 78px!important;
+  font-size: 48px!important;
   margin-bottom:-10px;
   padding: 0 4px;
-  margin-top: -35px;
+  margin-top: -10px;
   font-weight: 400!important;
 }
   .count_value {
-    font-size: 9px;
+    margin-bottom: 0px;
+    font-size: 13px!important;
   }
 
 

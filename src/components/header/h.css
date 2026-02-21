@@ -41,7 +41,7 @@
   font-family: "Cinzel", serif;
   font-size: 80px; /* Slightly reduced for better fit */
   font-weight: 700; /* Bolder weight helps the gold gradient show better */
-  letter-spacing: 15px;
+  letter-spacing: 10px;
   line-height: 0.9;
   text-transform: uppercase;
   text-align: center;
@@ -68,15 +68,45 @@
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.2);
 }
 
-.ui {
-  font-family: "Dancing Script", cursive;
-  font-family: 'great';
-margin-top: 20px;
-text-transform: capitalize;
-  font-size: 55px;
-  font-style: italic;
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+
+
+.couple_name {
+  /* Use a bold, elegant font - serif fonts usually work best for this style */
+  /* font-family: 'Playfair Display', serif;  */
+  /* font-size: 5rem; */
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0;
+
+  /* The Metallic Gold Gradient */
+  background: linear-gradient(
+    to bottom,
+    #fcf6ba 0%,    /* Light highlight */
+    #bf953f 25%,   /* Base gold */
+    #fbf5b7 50%,   /* Mid highlight */
+    #aa771c 75%,   /* Deep shadow gold */
+    #916109 100%   /* Darker edge */
+  );
+  
+  /* Clipping the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* The 3D Shadow Effect */
+  filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
+  
+  /* Optional: Adds a subtle shine/stroke to help it pop */
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
+}
+
+.ui{
+  font-family: "bik";
+  text-transform: lowercase;
+  margin: 20px -10px;
+  margin-top: 40px;
+  font-weight: 400;
 }
 
 /* ------------------ RESPONSIVE MEDIA QUERIES ------------------ */
@@ -120,9 +150,9 @@ letter-spacing: 4.5px;
 }
 
 /* Mobile 480px */
-@media (max-width: 480px) {
+@media (max-width: 670px) {
   .couple_name {
-    font-size: 40px;
+    font-size: 38px;
 letter-spacing: 4.5px;
 
   }
@@ -130,11 +160,12 @@ letter-spacing: 4.5px;
 
 
   .header_container{
-    height: 70vh;
+    height: 60vh;
   }
   .ui {
-    font-size: 26px;
-    margin-top: 10px;
+    font-size: 36px;
+    margin: 0;
+    margin-top: 5px;
     text-transform: capitalize;
   }
   .headrer_couple_name_section {

@@ -213,8 +213,6 @@ const Middle = () => {
               className="middle_card luxury_card"
               variants={luxuryCardReveal}
               whileHover={{
-                y: -10,
-                rotateX: -2,
                 boxShadow: "0 35px 60px rgba(0,0,0,0.25)",
               }}
             >
@@ -224,7 +222,6 @@ const Middle = () => {
                     <motion.h2
                       className="middle_couple_name tos pal"
                       variants={nameReveal}
-                      whileHover={{ scale: 1.05, color: "#f8d442" }}
                     >
                       Aike
                     </motion.h2>
@@ -232,7 +229,7 @@ const Middle = () => {
                     <motion.h2
                       className="middle_couple_name tos musra"
                       variants={nameReveal}
-                      whileHover={{ scale: 1.05, color: "#f8d442" }}
+                  
                     >
                       Ngozi
                     </motion.h2>
@@ -245,7 +242,7 @@ const Middle = () => {
                       className="star_img"
                       animate={{
                         rotate: [360, 360],
-                        scale: [1, 1.05, 1],
+                        scale: [1, 1.35, 1],
                       }}
                       transition={{
                         rotate: {
@@ -268,11 +265,7 @@ const Middle = () => {
                     className="yearma"
                     variants={locationGlow}
                     animate={{
-                      textShadow: [
-                        "0 0 10px rgba(248,212,66,0.5)",
-                        "0 0 20px rgba(248,212,66,0.8)",
-                        "0 0 30px rgba(248,212,66,0.5)",
-                      ],
+                      
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
                   >
@@ -320,8 +313,6 @@ const Middle = () => {
               className="middle_card luxury_card"
               variants={luxuryCardReveal}
               whileHover={{
-                y: -10,
-                rotateX: -2,
                 boxShadow: "0 35px 60px rgba(0,0,0,0.25)",
               }}
             >
@@ -340,10 +331,10 @@ const Middle = () => {
                     <motion.img
                       src={start}
                       alt="Event Star"
-                      className="star_img"
+                      className="star_img bush"
                       animate={{
                         rotate: [360, 360],
-                        scale: [1, 1.05, 1],
+                        scale: [1, 1.35, 1],
                       }}
                       transition={{
                         rotate: {
