@@ -168,8 +168,8 @@ const Rsvp = () => {
 
       <div className="rsvp_area">
         <div className="middle_card luxury_card">
-          <div className="dosh">
-            <div className="depth">
+          <div className="dosh ">
+            <div className="depth iu">
               <h2 className="rsvp_sm_title">WITH GRATITUDE</h2>
               <h1 className="rsvp_title">Please Share Your Mailing Address</h1>
               <h3 className="rsvp_p">So we may send your formal invitation</h3>
