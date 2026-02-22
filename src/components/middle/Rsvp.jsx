@@ -315,7 +315,7 @@ const Rsvp = () => {
                 {/* CITY */}
                 <div className="rsvp_sub">
                   <div className="rsvp_input_area">
-                    <label className="rsvp_label">CITY *</label>
+                    <label className="rsvp_label">CITY</label>
                     <input
                       type="text"
                       name="city"
