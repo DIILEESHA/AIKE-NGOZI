@@ -1029,6 +1029,7 @@ margin-top: 0px;
 
   .rsvp_sm_title{
     font-size: 35px;
+    margin-top: 0px;
   }
 
   .rsvp_p{
@@ -1039,6 +1040,23 @@ margin-top: 0px;
   .rsvp_title{
     line-height: 120%;
     font-size: 42px!important;
+    margin-bottom: 0px;
+  }
+}@media  (max-width:400px){
+
+  .rsvp_sm_title{
+    font-size: 30px;
+    margin-top: 0px;
+  }
+
+  .rsvp_p{
+    margin-top: 0px;
+    line-height: 80%;
+    font-size: 28px!important;
+  }
+  .rsvp_title{
+    line-height: 140%;
+    font-size: 30px!important;
     margin-bottom: 0px;
   }
 }
