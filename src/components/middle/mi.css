@@ -71,7 +71,7 @@ display: flex;align-items: center;justify-content: center;
   margin-bottom: 30px;
 }
 .costa {
-  padding: 80px 0 0 0;
+  padding: 8px 0 0 0;
 }
 .rba {
   font-size: 40px;
@@ -325,9 +325,9 @@ display: flex;align-items: center;justify-content: center;
 .year {
   font-weight: 500;
   text-align: center;
-  font-size: 100px;
+  font-size: 50px;
   letter-spacing: 1.3px;
-  font-family: "bik";
+  font-family: "cinzel";
   margin: 0px 0;
 margin-bottom: -20px;
   /* The Metallic Gold Gradient */
@@ -534,12 +534,14 @@ letter-spacing: 1.3px;
 
 .rsvp_p {
   font-family: "raleway";
-  font-family: "bik", serif;
+  font-family: "cinzel", serif;
 font-weight: 400;
 margin-top: 0px;
   text-transform: capitalize;
-  font-size: 34px;
+  font-size: 24px;
   letter-spacing: 1.3px;
+    margin-bottom: -20px;
+
 }
 .rsvp_sm_title {
   font-size: 45px;
@@ -634,7 +636,7 @@ margin-top: 0px;
   }
 
   .year {
-    font-size: 82px;
+    font-size: 52px;
   }
 
   .yearma {
@@ -747,7 +749,7 @@ margin-top: 0px;
     margin-bottom: -30px;
   }
   .year {
-    font-size: 76px;
+    font-size: 46px;
   }
   .yearma {
     font-size: 20px;
@@ -848,6 +850,7 @@ margin-top: 0px;
 
   .year {
     font-size: 32px;
+    margin-bottom: 20px;
   }
   .go {
     gap: 10px;
@@ -929,17 +932,17 @@ margin-top: 0px;
     margin: -10px 0;
   }
   .year {
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 400;
 
-    font-family: "bik";
-    line-height: 80%;
-    margin-bottom: 15px;
+    font-family: "cinzel";
+    line-height: 120%;
+    margin-bottom: -35px;
   }
 
 
   .yearma {
-    font-size: 35px;
+    font-size: 42px;
     /* margin-top: -30px; */
     margin-bottom: 0px;
   }
@@ -975,6 +978,7 @@ margin-top: 0px;
   .rsvp_p {
     margin-top: 14px;
     font-size: 18px !important;
+
   }
 
   .rsvp_label {
@@ -1035,6 +1039,7 @@ margin-top: 0px;
   .rsvp_p{
     margin-top: 0px;
     line-height: 80%;
+  
     font-size: 28px!important;
   }
   .rsvp_title{
@@ -1042,7 +1047,17 @@ margin-top: 0px;
     font-size: 42px!important;
     margin-bottom: 0px;
   }
-}@media  (max-width:440px){
+
+
+  .year{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .yearma{
+    font-size: 30px;
+  }
+}@media  (max-width:450px){
 
   .rsvp_sm_title{
     font-size: 30px;
@@ -1051,8 +1066,8 @@ margin-top: 0px;
 
   .rsvp_p{
     margin-top: 20px;
-    line-height: 80%;
-    font-size:27px!important;
+    line-height: 120%;
+    font-size:13px!important;
   }
   .ss{
     width: 250px;
