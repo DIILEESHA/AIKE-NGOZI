@@ -1,3 +1,4 @@
+// AdminDashboard.js
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -37,10 +38,7 @@ const AdminDashboard = () => {
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
 
-  /* =========================
-     AUTH
-  ========================= */
-
+  // Password auth
   const handleLogin = () => {
     if (password === "an26!") {
       setAuthenticated(true);
@@ -50,10 +48,7 @@ const AdminDashboard = () => {
     }
   };
 
-  /* =========================
-     FETCH DATA
-  ========================= */
-
+  // Fetch RSVPs
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -71,13 +66,10 @@ const AdminDashboard = () => {
     setLoading(false);
   };
 
-  /* =========================
-     DELETE
-  ========================= */
-
+  // Delete record
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, "addresses", id));
+      await deleteDoc(doc(db, "rsvps", id)); // fixed collection name
       const updated = addresses.filter((item) => item.id !== id);
       setAddresses(updated);
       setFilteredData(updated);
@@ -88,29 +80,24 @@ const AdminDashboard = () => {
     }
   };
 
-  /* =========================
-     SEARCH + FILTER
-  ========================= */
-
+  // Search & filter
   useEffect(() => {
     let data = [...addresses];
 
     // Search filter
     if (searchText) {
       data = data.filter((item) =>
-        `${item.firstName} ${item.lastName} ${item.email}`
+        `${item.firstName} ${item.lastName} ${item.email} ${item.streetAddress} ${item.addressLine2 || ""} ${item.city || ""} ${item.state || ""} ${item.zip || ""} ${item.country}`
           .toLowerCase()
-          .includes(searchText.toLowerCase()),
+          .includes(searchText.toLowerCase())
       );
     }
 
-    // Date filter (using createdAt)
+    // Date filter
     if (dateRange.length === 2) {
       data = data.filter((item) => {
         if (!item.createdAt?.seconds) return false;
-
         const itemDate = dayjs(item.createdAt.seconds * 1000);
-
         return (
           itemDate.isAfter(dateRange[0].startOf("day")) &&
           itemDate.isBefore(dateRange[1].endOf("day"))
@@ -121,20 +108,17 @@ const AdminDashboard = () => {
     setFilteredData(data);
   }, [searchText, dateRange, addresses]);
 
-  /* =========================
-     EXPORT EXCEL
-  ========================= */
-
+  // Export Excel
   const exportExcel = () => {
     const formatted = filteredData.map((item) => ({
       FirstName: item.firstName,
       LastName: item.lastName,
       Email: item.email,
-      AddressLine1: item.addressLine1 || "",
+      AddressLine1: item.streetAddress || "", // Address Line 1 included
       AddressLine2: item.addressLine2 || "",
       City: item.city || "",
       State: item.state || "",
-      PostalCode: item.zip || "", // FIXED
+      PostalCode: item.zip || "",
       Country: item.country || "",
       Status: item.isComplete ? "Complete" : "Incomplete",
       CreatedAt: item.createdAt?.seconds
@@ -148,27 +132,21 @@ const AdminDashboard = () => {
     XLSX.writeFile(workbook, "Address_List.xlsx");
   };
 
-  /* =========================
-     TABLE COLUMNS
-  ========================= */
-
+  // Table columns with sorting enabled
   const columns = [
     {
       title: "Full Name",
-      render: (_, record) => (
-        <strong>
-          {record.firstName} {record.lastName}
-        </strong>
-      ),
+      render: (_, record) => `${record.firstName} ${record.lastName}`,
+      sorter: (a, b) =>
+        (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName),
     },
-    {
-      title: "Email",
-      dataIndex: "email",
-    },
-    {
-      title: "Country",
-      dataIndex: "country",
-    },
+    { title: "Email", dataIndex: "email", sorter: (a, b) => a.email.localeCompare(b.email) },
+    { title: "Street Address", dataIndex: "streetAddress", sorter: (a, b) => (a.streetAddress || "").localeCompare(b.streetAddress || "") },
+    { title: "Address Line 2", dataIndex: "addressLine2", sorter: (a, b) => (a.addressLine2 || "").localeCompare(b.addressLine2 || "") },
+    { title: "City", dataIndex: "city", sorter: (a, b) => (a.city || "").localeCompare(b.city || "") },
+    { title: "State", dataIndex: "state", sorter: (a, b) => (a.state || "").localeCompare(b.state || "") },
+    { title: "Zip", dataIndex: "zip", sorter: (a, b) => (a.zip || "").localeCompare(b.zip || "") },
+    { title: "Country", dataIndex: "country", sorter: (a, b) => (a.country || "").localeCompare(b.country || "") },
     {
       title: "Status",
       render: (_, record) => (
@@ -177,6 +155,7 @@ const AdminDashboard = () => {
           text={record.isComplete ? "Complete" : "Incomplete"}
         />
       ),
+      sorter: (a, b) => (a.isComplete === b.isComplete ? 0 : a.isComplete ? -1 : 1),
     },
     {
       title: "Created",
@@ -184,6 +163,8 @@ const AdminDashboard = () => {
         record.createdAt?.seconds
           ? new Date(record.createdAt.seconds * 1000).toLocaleString()
           : "N/A",
+      sorter: (a, b) =>
+        (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0),
     },
     {
       title: "Actions",
@@ -207,10 +188,7 @@ const AdminDashboard = () => {
     },
   ];
 
-  /* =========================
-     LOGIN SCREEN
-  ========================= */
-
+  // Login screen
   if (!authenticated) {
     return (
       <div
@@ -239,10 +217,6 @@ const AdminDashboard = () => {
     );
   }
 
-  /* =========================
-     DASHBOARD
-  ========================= */
-
   return (
     <div style={{ padding: 20 }}>
       <Card>
@@ -260,7 +234,7 @@ const AdminDashboard = () => {
 
           <Space wrap>
             <Input
-              placeholder="Search name or email..."
+              placeholder="Search any field..."
               onChange={(e) => setSearchText(e.target.value)}
               allowClear
             />
@@ -288,7 +262,7 @@ const AdminDashboard = () => {
         />
       </Card>
 
-      {/* VIEW MODAL */}
+      {/* View Modal */}
       <Modal
         open={viewModal}
         title="Full Address Details"
@@ -301,46 +275,17 @@ const AdminDashboard = () => {
       >
         {selectedRecord && (
           <div style={{ lineHeight: 2 }}>
-            <p>
-              <strong>First Name:</strong> {selectedRecord.firstName}
-            </p>
-            <p>
-              <strong>Last Name:</strong> {selectedRecord.lastName}
-            </p>
-            <p>
-              <strong>Email:</strong> {selectedRecord.email}
-            </p>
-            <p>
-              <strong>Address Line 1:</strong> {selectedRecord.addressLine1}
-            </p>
-            <p>
-              <strong>Address Line 2:</strong>{" "}
-              {selectedRecord.addressLine2 || "N/A"}
-            </p>
-            <p>
-              <strong>City:</strong> {selectedRecord.city}
-            </p>
-            <p>
-              <strong>State:</strong> {selectedRecord.state || "N/A"}
-            </p>
-            <p>
-              <strong>Postal Code:</strong> {selectedRecord.zip || "N/A"}
-            </p>
-            <p>
-              <strong>Country:</strong> {selectedRecord.country}
-            </p>
-            <p>
-              <strong>Status:</strong>{" "}
-              {selectedRecord.isComplete ? "Complete" : "Incomplete"}
-            </p>
-            <p>
-              <strong>Created:</strong>{" "}
-              {selectedRecord.createdAt?.seconds
-                ? new Date(
-                    selectedRecord.createdAt.seconds * 1000,
-                  ).toLocaleString()
-                : "N/A"}
-            </p>
+            <p><strong>First Name:</strong> {selectedRecord.firstName}</p>
+            <p><strong>Last Name:</strong> {selectedRecord.lastName}</p>
+            <p><strong>Email:</strong> {selectedRecord.email}</p>
+            <p><strong>Address Line 1:</strong> {selectedRecord.streetAddress}</p>
+            <p><strong>Address Line 2:</strong> {selectedRecord.addressLine2 || "N/A"}</p>
+            <p><strong>City:</strong> {selectedRecord.city || "N/A"}</p>
+            <p><strong>State:</strong> {selectedRecord.state || "N/A"}</p>
+            <p><strong>Postal Code:</strong> {selectedRecord.zip || "N/A"}</p>
+            <p><strong>Country:</strong> {selectedRecord.country}</p>
+            <p><strong>Status:</strong> {selectedRecord.isComplete ? "Complete" : "Incomplete"}</p>
+            <p><strong>Created:</strong> {selectedRecord.createdAt?.seconds ? new Date(selectedRecord.createdAt.seconds * 1000).toLocaleString() : "N/A"}</p>
           </div>
         )}
       </Modal>
