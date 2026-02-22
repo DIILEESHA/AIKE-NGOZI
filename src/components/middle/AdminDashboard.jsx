@@ -12,6 +12,7 @@ import {
   Card,
   Typography,
   DatePicker,
+  Select,
 } from "antd";
 import {
   DownloadOutlined,
@@ -26,6 +27,7 @@ import dayjs from "dayjs";
 
 const { Title } = Typography;
 const { RangePicker } = DatePicker;
+const { Option } = Select;
 
 const AdminDashboard = () => {
   const [addresses, setAddresses] = useState([]);
@@ -35,10 +37,11 @@ const AdminDashboard = () => {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [searchText, setSearchText] = useState("");
   const [dateRange, setDateRange] = useState([]);
+  const [statusFilter, setStatusFilter] = useState("All");
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
 
-  // Password auth
+  // ===================== AUTH =====================
   const handleLogin = () => {
     if (password === "an26!") {
       setAuthenticated(true);
@@ -48,7 +51,7 @@ const AdminDashboard = () => {
     }
   };
 
-  // Fetch RSVPs
+  // ===================== FETCH DATA =====================
   const fetchData = async () => {
     setLoading(true);
     try {
@@ -66,10 +69,10 @@ const AdminDashboard = () => {
     setLoading(false);
   };
 
-  // Delete record
+  // ===================== DELETE =====================
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, "rsvps", id)); // fixed collection name
+      await deleteDoc(doc(db, "rsvps", id));
       const updated = addresses.filter((item) => item.id !== id);
       setAddresses(updated);
       setFilteredData(updated);
@@ -80,11 +83,11 @@ const AdminDashboard = () => {
     }
   };
 
-  // Search & filter
+  // ===================== SEARCH, STATUS, DATE FILTER =====================
   useEffect(() => {
     let data = [...addresses];
 
-    // Search filter
+    // Text search across all fields
     if (searchText) {
       data = data.filter((item) =>
         `${item.firstName} ${item.lastName} ${item.email} ${item.streetAddress} ${item.addressLine2 || ""} ${item.city || ""} ${item.state || ""} ${item.zip || ""} ${item.country}`
@@ -93,7 +96,14 @@ const AdminDashboard = () => {
       );
     }
 
-    // Date filter
+    // Status filter
+    if (statusFilter === "Complete") {
+      data = data.filter((item) => item.isComplete);
+    } else if (statusFilter === "Incomplete") {
+      data = data.filter((item) => !item.isComplete);
+    }
+
+    // Date range filter
     if (dateRange.length === 2) {
       data = data.filter((item) => {
         if (!item.createdAt?.seconds) return false;
@@ -106,15 +116,15 @@ const AdminDashboard = () => {
     }
 
     setFilteredData(data);
-  }, [searchText, dateRange, addresses]);
+  }, [searchText, statusFilter, dateRange, addresses]);
 
-  // Export Excel
+  // ===================== EXPORT EXCEL =====================
   const exportExcel = () => {
     const formatted = filteredData.map((item) => ({
       FirstName: item.firstName,
       LastName: item.lastName,
       Email: item.email,
-      AddressLine1: item.streetAddress || "", // Address Line 1 included
+      AddressLine1: item.streetAddress || "",
       AddressLine2: item.addressLine2 || "",
       City: item.city || "",
       State: item.state || "",
@@ -132,7 +142,7 @@ const AdminDashboard = () => {
     XLSX.writeFile(workbook, "Address_List.xlsx");
   };
 
-  // Table columns with sorting enabled
+  // ===================== TABLE COLUMNS =====================
   const columns = [
     {
       title: "Full Name",
@@ -188,7 +198,7 @@ const AdminDashboard = () => {
     },
   ];
 
-  // Login screen
+  // ===================== LOGIN SCREEN =====================
   if (!authenticated) {
     return (
       <div
@@ -217,6 +227,7 @@ const AdminDashboard = () => {
     );
   }
 
+  // ===================== DASHBOARD =====================
   return (
     <div style={{ padding: 20 }}>
       <Card>
@@ -234,10 +245,20 @@ const AdminDashboard = () => {
 
           <Space wrap>
             <Input
-              placeholder="Search any field..."
+              placeholder="Search all fields..."
               onChange={(e) => setSearchText(e.target.value)}
               allowClear
             />
+
+            <Select
+              value={statusFilter}
+              onChange={(value) => setStatusFilter(value)}
+              style={{ width: 150 }}
+            >
+              <Option value="All">All Status</Option>
+              <Option value="Complete">Complete</Option>
+              <Option value="Incomplete">Incomplete</Option>
+            </Select>
 
             <RangePicker onChange={(dates) => setDateRange(dates || [])} />
 
@@ -262,7 +283,7 @@ const AdminDashboard = () => {
         />
       </Card>
 
-      {/* View Modal */}
+      {/* VIEW MODAL */}
       <Modal
         open={viewModal}
         title="Full Address Details"
