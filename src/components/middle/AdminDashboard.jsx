@@ -87,21 +87,18 @@ const AdminDashboard = () => {
   useEffect(() => {
     let data = [...addresses];
 
-    // Text search across all fields
+    // Search filter
     if (searchText) {
       data = data.filter((item) =>
-        `${item.firstName} ${item.lastName} ${item.email} ${item.streetAddress} ${item.addressLine2 || ""} ${item.city || ""} ${item.state || ""} ${item.zip || ""} ${item.country}`
+        `${item.firstName || ""} ${item.lastName || ""} ${item.email || ""} ${item.streetAddress || ""} ${item.addressLine2 || ""} ${item.city || ""} ${item.state || ""} ${item.zip || ""} ${item.country || ""}`
           .toLowerCase()
           .includes(searchText.toLowerCase())
       );
     }
 
     // Status filter
-    if (statusFilter === "Complete") {
-      data = data.filter((item) => item.isComplete);
-    } else if (statusFilter === "Incomplete") {
-      data = data.filter((item) => !item.isComplete);
-    }
+    if (statusFilter === "Complete") data = data.filter((item) => item.isComplete);
+    if (statusFilter === "Incomplete") data = data.filter((item) => !item.isComplete);
 
     // Date range filter
     if (dateRange.length === 2) {
@@ -121,14 +118,14 @@ const AdminDashboard = () => {
   // ===================== EXPORT EXCEL =====================
   const exportExcel = () => {
     const formatted = filteredData.map((item) => ({
-      FirstName: item.firstName,
-      LastName: item.lastName,
-      Email: item.email,
-      AddressLine1: item.streetAddress || "",
+      FirstName: item.firstName || "",
+      LastName: item.lastName || "",
+      Email: item.email || "",
+      StreetAddress: item.streetAddress || "",
       AddressLine2: item.addressLine2 || "",
       City: item.city || "",
       State: item.state || "",
-      PostalCode: item.zip || "",
+      Zip: item.zip || "",
       Country: item.country || "",
       Status: item.isComplete ? "Complete" : "Incomplete",
       CreatedAt: item.createdAt?.seconds
@@ -146,11 +143,13 @@ const AdminDashboard = () => {
   const columns = [
     {
       title: "Full Name",
-      render: (_, record) => `${record.firstName} ${record.lastName}`,
+      render: (_, record) => `${record.firstName || ""} ${record.lastName || ""}`,
       sorter: (a, b) =>
-        (a.firstName + a.lastName).localeCompare(b.firstName + b.lastName),
+        ((a.firstName || "") + (a.lastName || "")).localeCompare(
+          (b.firstName || "") + (b.lastName || "")
+        ),
     },
-    { title: "Email", dataIndex: "email", sorter: (a, b) => a.email.localeCompare(b.email) },
+    { title: "Email", dataIndex: "email", sorter: (a, b) => (a.email || "").localeCompare(b.email || "") },
     { title: "Street Address", dataIndex: "streetAddress", sorter: (a, b) => (a.streetAddress || "").localeCompare(b.streetAddress || "") },
     { title: "Address Line 2", dataIndex: "addressLine2", sorter: (a, b) => (a.addressLine2 || "").localeCompare(b.addressLine2 || "") },
     { title: "City", dataIndex: "city", sorter: (a, b) => (a.city || "").localeCompare(b.city || "") },
@@ -173,8 +172,7 @@ const AdminDashboard = () => {
         record.createdAt?.seconds
           ? new Date(record.createdAt.seconds * 1000).toLocaleString()
           : "N/A",
-      sorter: (a, b) =>
-        (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0),
+      sorter: (a, b) => (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0),
     },
     {
       title: "Actions",
@@ -296,15 +294,15 @@ const AdminDashboard = () => {
       >
         {selectedRecord && (
           <div style={{ lineHeight: 2 }}>
-            <p><strong>First Name:</strong> {selectedRecord.firstName}</p>
-            <p><strong>Last Name:</strong> {selectedRecord.lastName}</p>
-            <p><strong>Email:</strong> {selectedRecord.email}</p>
-            <p><strong>Address Line 1:</strong> {selectedRecord.streetAddress}</p>
+            <p><strong>First Name:</strong> {selectedRecord.firstName || "N/A"}</p>
+            <p><strong>Last Name:</strong> {selectedRecord.lastName || "N/A"}</p>
+            <p><strong>Email:</strong> {selectedRecord.email || "N/A"}</p>
+            <p><strong>Street Address:</strong> {selectedRecord.streetAddress || "N/A"}</p>
             <p><strong>Address Line 2:</strong> {selectedRecord.addressLine2 || "N/A"}</p>
             <p><strong>City:</strong> {selectedRecord.city || "N/A"}</p>
             <p><strong>State:</strong> {selectedRecord.state || "N/A"}</p>
-            <p><strong>Postal Code:</strong> {selectedRecord.zip || "N/A"}</p>
-            <p><strong>Country:</strong> {selectedRecord.country}</p>
+            <p><strong>Zip:</strong> {selectedRecord.zip || "N/A"}</p>
+            <p><strong>Country:</strong> {selectedRecord.country || "N/A"}</p>
             <p><strong>Status:</strong> {selectedRecord.isComplete ? "Complete" : "Incomplete"}</p>
             <p><strong>Created:</strong> {selectedRecord.createdAt?.seconds ? new Date(selectedRecord.createdAt.seconds * 1000).toLocaleString() : "N/A"}</p>
           </div>
