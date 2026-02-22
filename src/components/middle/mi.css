@@ -323,13 +323,13 @@ display: flex;align-items: center;justify-content: center;
   margin-top: -40px;
 }
 .year {
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
-  font-size: 60px;
+  font-size: 100px;
   letter-spacing: 1.3px;
-  font-family: "great";
-  margin: 20px 0;
-
+  font-family: "bik";
+  margin: 0px 0;
+margin-bottom: -20px;
   /* The Metallic Gold Gradient */
   background: linear-gradient(
     to bottom,
@@ -353,11 +353,10 @@ display: flex;align-items: center;justify-content: center;
 }
 
 .yearma {
-  font-weight: 700;
-  font-family: "great";
+  font-weight: 400;
+  font-family: "bik";
   text-align: center;
-  margin: 20px 0;
-
+margin-top: 0px;
   /* The Metallic Gold Gradient */
   background: linear-gradient(
     to bottom,
@@ -372,7 +371,7 @@ display: flex;align-items: center;justify-content: center;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-font-size: 40px;
+font-size: 60px;
 letter-spacing: 1.3px;
   /* The 3D Shadow Effect */
   filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
@@ -535,21 +534,25 @@ letter-spacing: 1.3px;
 
 .rsvp_p {
   font-family: "raleway";
-  font-family: "great", serif;
-
+  font-family: "bik", serif;
+font-weight: 400;
+margin-top: 0px;
   text-transform: capitalize;
-  font-size: 24px;
+  font-size: 34px;
   letter-spacing: 1.3px;
 }
 .rsvp_sm_title {
-  font-size: 35px;
+  font-size: 45px;
+  margin-bottom: -20px;
   letter-spacing: 1.3px;
+  font-family: "bik";
+  font-weight: 400;
   text-transform: capitalize;
 }
 .rsvp_title {
   /* font-weight: bold; */
   text-transform: capitalize;
-  font-size: 40px;
+  font-size: 65px;
   background: linear-gradient(
     to bottom,
     #bf953f 0%,
@@ -560,12 +563,15 @@ letter-spacing: 1.3px;
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 20px auto 5px auto;
+  margin: 20px auto -20px auto;
   width: 100%;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
   font-family: "Playfair Display", serif;
-  font-family: "great";
+  font-family: "bik";
   font-weight: bolder;
+  font-weight: 400;
+  margin-bottom: -20px;
+  line-height:90%;
   /* font-family: "raleway", serif; */
 }
 
@@ -921,16 +927,17 @@ letter-spacing: 1.3px;
     margin: -10px 0;
   }
   .year {
-    font-size: 30px;
-    font-weight: bold;
-    font-family: "great";
-    line-height: 150%;
+    font-size: 40px;
+    font-weight: 400;
+
+    font-family: "bik";
+    line-height: 80%;
     margin-bottom: 15px;
   }
 
 
   .yearma {
-    font-size: 20px;
+    font-size: 30px;
     /* margin-top: -30px; */
     margin-bottom: 0px;
   }
@@ -940,7 +947,7 @@ letter-spacing: 1.3px;
     margin: -20px auto!important;
   }
   .bush{
-    margin: -50px 0!important;
+    margin: -40px 0!important;
   }
   .inside_img {
     height: 40vh;
@@ -1019,13 +1026,17 @@ letter-spacing: 1.3px;
 @media  (max-width:480px){
 
   .rsvp_sm_title{
-    font-size: 17px;
+    font-size: 26px;
   }
 
   .rsvp_p{
-    font-size: 14px!important;
+    margin-top: 0px;
+    line-height: 80%;
+    font-size: 24px!important;
   }
   .rsvp_title{
-    font-size: 24px!important;
+    line-height: 80%;
+    font-size: 44px!important;
+    margin-bottom: 0px;
   }
 }
