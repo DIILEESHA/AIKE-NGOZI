@@ -183,7 +183,12 @@ const Rsvp = () => {
           <div className="dosh ">
             <div className="depth iu">
               <h2 className="rsvp_sm_title">With Gratitude</h2>
-              <h1 className="rsvp_title">Please Share Your Mailing Address</h1>
+              <h1 className="rsvp_title">Please Share Your Mailing 
+            
+        </h1>
+                 <h1 className="rsvp_title  paka">
+            
+                Address</h1>
 <div className="hoc">
   <img src={sa}alt="" className="ss" />
 </div>
