@@ -1050,13 +1050,17 @@ margin-top: 0px;
   }
 
   .rsvp_p{
-    margin-top: 0px;
+    margin-top: 20px;
     line-height: 80%;
-    font-size: 28px!important;
+    font-size:27px!important;
+  }
+  .ss{
+    width: 250px;
   }
   .rsvp_title{
     line-height: 140%;
-    font-size: 30px!important;
+    font-weight: 800!important;
+    font-size: 33px!important;
     margin-bottom: 0px;
   }
 }
