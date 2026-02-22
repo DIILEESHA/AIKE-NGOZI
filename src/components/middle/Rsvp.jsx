@@ -5,7 +5,7 @@ import Select from "react-select";
 import countryList from "react-select-country-list";
 import Count from "../count/Count";
 import "react-toastify/dist/ReactToastify.css";
-
+import sa from "../../assets/stars.png"
 // 1. UPDATED CHARACTER LIMITS
 const FIELD_LIMITS = {
   firstName: 50,
@@ -146,7 +146,7 @@ const Rsvp = () => {
       newErrors.email = "Invalid Email Address";
     if (!formData.streetAddress)
       newErrors.streetAddress = "Street Address is Required";
-    if (!formData.city) newErrors.city = "City is Required";
+    // if (!formData.city) newErrors.city = "City is Required";
     if (!formData.country) newErrors.country = "Country is Required";
 
     if (Object.keys(newErrors).length > 0) {
@@ -182,8 +182,11 @@ const Rsvp = () => {
         <div className="middle_card luxury_card">
           <div className="dosh ">
             <div className="depth iu">
-              <h2 className="rsvp_sm_title">WITH GRATITUDE</h2>
+              <h2 className="rsvp_sm_title">With Gratitude</h2>
               <h1 className="rsvp_title">Please Share Your Mailing Address</h1>
+<div className="hoc">
+  <img src={sa}alt="" className="ss" />
+</div>
               <h3 className="rsvp_p">So we may send your formal invitation</h3>
 
               <form className="rsvp_formy" onSubmit={handleSubmit}>
@@ -393,7 +396,7 @@ const Rsvp = () => {
               </form>
 
               {submitted && (
-                <div style={{ marginTop: "20px", color: "#fff", fontSize: "16px", fontWeight: 500 }}>
+                <div className="homba" >
                   Thank you for sharing your address.
                 </div>
               )}

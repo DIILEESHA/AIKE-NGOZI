@@ -4,6 +4,16 @@
   background-image: url("../../assets/beige.avif");
   width: 100%;
 }
+
+.hoc{
+display: flex;align-items: center;justify-content: center;
+}
+
+.ss{
+  width: 350px;
+
+  margin:-80px 0 -100px 0;
+}
   .rsvp_input::placeholder {
     font-size: 14px;
   }
@@ -315,8 +325,9 @@
 .year {
   font-weight: 700;
   text-align: center;
-  font-size: 50px;
-  font-family: "cinzel";
+  font-size: 60px;
+  letter-spacing: 1.3px;
+  font-family: "great";
   margin: 20px 0;
 
   /* The Metallic Gold Gradient */
@@ -343,7 +354,7 @@
 
 .yearma {
   font-weight: 700;
-  font-family: "cinzel";
+  font-family: "great";
   text-align: center;
   margin: 20px 0;
 
@@ -361,7 +372,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
+font-size: 40px;
+letter-spacing: 1.3px;
   /* The 3D Shadow Effect */
   filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.5));
   
@@ -518,18 +530,21 @@
   
   /* Optional: Adds a subtle shine/stroke to help it pop */
   -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
-  font-family: "Cinzel", serif;
+  font-family: "great", serif;
 }
 
 .rsvp_p {
   font-family: "raleway";
-  font-family: "Cinzel", serif;
+  font-family: "great", serif;
 
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 24px;
+  letter-spacing: 1.3px;
 }
 .rsvp_sm_title {
-  font-size: 25px;
+  font-size: 35px;
+  letter-spacing: 1.3px;
+  text-transform: capitalize;
 }
 .rsvp_title {
   /* font-weight: bold; */
@@ -584,7 +599,11 @@
 
   transition: all 0.5s ease;
 }
-
+.homba{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "raleway";
+}
 .submit_btn:hover {
   background-position: right center;
   transform: translateY(-4px);
@@ -826,12 +845,12 @@
     gap: 10px;
   }
   .yearma {
-    font-size: 18px;
+    font-size: 38px;
   }
 
   .rsvp_title {
     width: 100%;
-    font-size: 22px;
+    font-size:38px;
   }
   .inside_img {
     height: 40vh;
@@ -902,15 +921,17 @@
     margin: -10px 0;
   }
   .year {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
+    font-family: "great";
     line-height: 150%;
     margin-bottom: 15px;
   }
 
 
   .yearma {
-    font-size: 15px;
+    font-size: 20px;
+    /* margin-top: -30px; */
     margin-bottom: 0px;
   }
   .star_img {
@@ -926,12 +947,12 @@
   }
 
   .rsvp_title {
-    font-size: 22px!important;
+    font-size: 38px!important;
     line-height: 140%;
     margin-bottom: -10px;
   }
   .rsvp_sm_title {
-    font-size: 14px;
+    font-size: 24px;
     margin-bottom: -10px;
   }
  .tf_img {
@@ -944,7 +965,7 @@
   }
   .rsvp_p {
     margin-top: 14px;
-    font-size: 12px !important;
+    font-size: 18px !important;
   }
 
   .rsvp_label {
@@ -986,5 +1007,25 @@
 
   .middle {
     padding: 15px;
+  }
+
+
+  .rsvp_title{
+    /* display: none!important; */
+  }
+}
+
+
+@media  (max-width:480px){
+
+  .rsvp_sm_title{
+    font-size: 17px;
+  }
+
+  .rsvp_p{
+    font-size: 14px!important;
+  }
+  .rsvp_title{
+    font-size: 24px!important;
   }
 }
