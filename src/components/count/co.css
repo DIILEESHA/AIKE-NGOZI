@@ -3,11 +3,25 @@
   align-items: center;
   gap: 30px;
   justify-content: center;
+  padding: 10px;
   text-align: center;
 }
 
 .count_subs {
+  position: relative;
+  display: flex;flex-direction: column;
+  align-items: center;justify-content: center;
   text-align: center;
+  min-width: auto;
+  width: 100%;
+  width: 100%;
+}
+.count_day{
+  position: absolute;
+}
+.count_value{
+  position: absolute;
+
 }
 .frt {
   font-weight: bold;
@@ -21,7 +35,6 @@
   font-family: "bik"!important;
   padding: 0 20px;
   font-size: 80px!important;
-  margin-bottom: -10px;
   margin-top: -20px;
   font-weight: 400!important;
    font-variant-numeric: tabular-nums;
@@ -64,9 +77,9 @@
   font-size: 100px!important;
   text-align: center;
   margin: 0px 0;
-  margin-top: -60px;
+  margin-top: -40px;
   font-family: "bik";
-margin-bottom: -20px;
+margin-bottom: 0px;
   /* The Metallic Gold Gradient */
   background: linear-gradient(
     to bottom,
@@ -203,14 +216,14 @@ margin-bottom: -20px;
 .count_day{
   font-family: "bik"!important;
   font-size: 48px!important;
-  margin-bottom:-10px;
-  padding: 0 4px;
-  margin-top: -10px;
+  /* margin-bottom:-10px; */
+  /* padding: 0 4px; */
+  margin-top: -20px;
   font-weight: 400!important;
 }
   .count_value {
-    margin-bottom: 0px;
     font-size: 13px!important;
+    margin-top: 20px;
   }
 
 
@@ -219,13 +232,15 @@ margin-bottom: -20px;
     width: 70%;
   }
   .count_grid {
-    gap: 20px;
-    display: flex;align-items: center;justify-content: center;
+  display: flex;
+  justify-content: space-between;
+    padding:5px 8px 25px 0;
+    width: 100%;
     /* display: grid; */
     /* padding: 0px 0 20px 0; */
     /* grid-template-columns: 1fr 1fr; */
   }
   .pagal {
-    width: 300px !important;
+    /* width: 300px !important; */
   }
 }
